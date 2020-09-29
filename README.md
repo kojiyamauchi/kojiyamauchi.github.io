@@ -11,4 +11,9 @@
 
 <p align="center">When Came Up with Some Ideas, I'll Add Content.</p>  
 
+<h2 align="center"></h2>  
+
+### 🖋 Memo.
+- `eslint-config-mdcs` & `eslint-plugin-html` is Necessary to Use Three.js  
+
 <h2 align="center">🏄‍♂️</h2>
