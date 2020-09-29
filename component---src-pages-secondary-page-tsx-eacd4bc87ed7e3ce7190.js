@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{XRqp:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),c=t.n(a),o=t("H8eV"),r=t("9Dj+"),i=t("Wbzz"),p=t("vOnD"),l=t("zowL");n.default=Object(p.c)((function(e){var n=e.location.pathname;return c.a.createElement(r.a,{currentLocation:n},c.a.createElement(o.a,{title:"せかんだりー",pagePath:n}),c.a.createElement(i.Link,{to:"/"},"せかんだりー"))})).withConfig({displayName:"secondary-page",componentId:"lncm3r-0"})(["",""],l.c)}}]);
+//# sourceMappingURL=component---src-pages-secondary-page-tsx-eacd4bc87ed7e3ce7190.js.map
