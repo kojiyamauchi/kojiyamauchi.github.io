@@ -82,6 +82,6 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install Dependencies
         run: yarn
-      - name: Build
+      - name: Do Build Test
         if: env.LAUNCH_BUILD == 'on'
         run: yarn build
