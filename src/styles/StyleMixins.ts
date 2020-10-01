@@ -14,6 +14,7 @@ Large Mobile.  => ${BreakPoint.largeMobile` Add CSS Property `}
 Tablet.        => ${BreakPoint.tablet` Add CSS Property `}
 Desktop.       => ${BreakPoint.desktop` Add CSS Property `}
 Large Desktop. => ${BreakPoint.largeDesktop` Add CSS Property `}
+Extra Large Desktop. => ${BreakPoint.extraLargeDesktop` Add CSS Property `}
 */
 export const BreakPoint = Object.keys(BREAK_POINT_WIDTH).reduce((accumulator, current): BreakPointMember => {
   const breakPointKey = current as keyof BreakPointWidthMember
