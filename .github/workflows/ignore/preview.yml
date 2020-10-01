@@ -1,6 +1,0 @@
-name: Preview
-on:
-  push:
-    branches:
-      - develop
-# TODO:
