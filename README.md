@@ -9,8 +9,13 @@
 
 ![README Image](https://github.com/kojiyamauchi/kojiyamauchi.github.io/blob/readme/images/readme_image.png)  
 
-<p align="center">When Came Up with Some Ideas, I'll Add Content.</p>  
-<p align="center">🤔&nbsp;&nbsp;Shoot Up Fireworks...</p>
+<p align="center">
+🤔<br>
+When Came Up with Some Ideas, I'll Add Content.<br>
+Shoot Up Fireworks...<br>
+Fly an Airplane...<br>
+Fly a Bird...
+</p>
 
 <h2 align="center"></h2>  
 
