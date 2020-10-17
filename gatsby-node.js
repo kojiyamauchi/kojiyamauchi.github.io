@@ -15,13 +15,14 @@ exports.onCreateWebpackConfig = ({ actions }) => {
           enforce: 'pre',
           test: /\.(js|jsx|ts|tsx)$/,
           exclude: /(node_modules|gatsby-browser.js|sync-requires.js)$/,
-          loader: 'eslint-loader'
+          use: 'eslint-loader'
         },
         {
           enforce: 'pre',
           test: /\.(js|jsx|ts|tsx)$/,
           exclude: /node_modules/,
-          use: [{ loader: 'stylelint-custom-processor-loader', options: { emitWarning: true } }]
+          loader: 'stylelint-custom-processor-loader',
+          options: { emitWarning: true }
         }
       ]
     },
