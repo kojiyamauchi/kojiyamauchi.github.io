@@ -12101,18 +12101,6 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-notifier@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/node-notifier/-/node-notifier-7.0.1.tgz#a355e33e6bebacef9bf8562689aed0f4230ca6f9"
-  integrity sha512-VkzhierE7DBmQEElhTGJIoiZa1oqRijOtgOlsXg32KrJRXsPy0NXFBqWGW/wTswnJlDCs5viRYaqWguqzsKcmg==
-  dependencies:
-    growly "^1.3.0"
-    is-wsl "^2.1.1"
-    semver "^7.2.1"
-    shellwords "^0.1.1"
-    uuid "^7.0.3"
-    which "^2.0.2"
-
 node-notifier@^5.1.2:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/node-notifier/-/node-notifier-5.4.3.tgz#cb72daf94c93904098e28b9c590fd866e464bd50"
@@ -15309,7 +15297,7 @@ semver@7.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.0.0.tgz#5f3ca35761e47e05b206c6daff2cf814f0316b8e"
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
 
-semver@7.x, semver@^7.0.0, semver@^7.1.1, semver@^7.2.1, semver@^7.3.2:
+semver@7.x, semver@^7.0.0, semver@^7.1.1, semver@^7.3.2:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.2.tgz#604962b052b81ed0786aae84389ffba70ffd3938"
   integrity sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==
@@ -17754,14 +17742,6 @@ web-namespaces@^1.0.0, web-namespaces@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.4.tgz#bc98a3de60dadd7faefc403d1076d529f5e030ec"
   integrity sha512-wYxSGajtmoP4WxfejAPIr4l0fVh+jeMXZb08wNc0tMg6xsfZXj3cECqIK0G7ZAqUq0PP8WlMDtaOGVBTAWztNw==
-
-webpack-build-notifier@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/webpack-build-notifier/-/webpack-build-notifier-2.1.0.tgz#fb20adbfa0b1bbbc44c616519605b2b53afff1a2"
-  integrity sha512-szOijap/Ztk99ghCYFtxNOPOwVoJcczaL7UNAt5+WBgYtyEUPd/ZzC45zvOZick9Y83g81eINrB/208XvAHc+w==
-  dependencies:
-    node-notifier "7.0.1"
-    strip-ansi "^6.0.0"
 
 webpack-dev-middleware@^3.7.2:
   version "3.7.2"
