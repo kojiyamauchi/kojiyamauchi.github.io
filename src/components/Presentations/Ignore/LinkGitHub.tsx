@@ -2,7 +2,6 @@
   Link GitHub.
 */
 
-import React from 'react'
 import styled from 'styled-components'
 import { BreakPoint } from '@/styles/StyleMixins'
 import { Link } from 'gatsby'

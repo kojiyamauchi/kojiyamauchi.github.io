@@ -2,7 +2,7 @@
   Typography Container.
 */
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { Typography } from '@/components/Presentations/Typography'
 import { SubLetter } from '@/components/Presentations/SubLetter'

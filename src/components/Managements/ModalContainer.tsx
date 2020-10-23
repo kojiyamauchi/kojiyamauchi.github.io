@@ -2,7 +2,7 @@
   Modal Container.
 */
 
-import React, { useRef, useEffect, Suspense } from 'react'
+import { useRef, useEffect, Suspense } from 'react'
 import { Canvas } from 'react-three-fiber'
 import { NoContent } from '@/components/Presentations/NoContent'
 import { JumpToOldPortfolio } from '@/components/Presentations/JumpToOldPortfolio'

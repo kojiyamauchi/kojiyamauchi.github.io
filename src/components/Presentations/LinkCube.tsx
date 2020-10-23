@@ -2,7 +2,7 @@
   Link Cube.
 */
 
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { withPrefix } from 'gatsby'
 import * as THREE from 'three'
 import { useFrame, useLoader } from 'react-three-fiber'

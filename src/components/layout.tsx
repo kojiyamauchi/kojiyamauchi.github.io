@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { ReactNode, Children, isValidElement, cloneElement, useState, useRef, useEffect } from 'react'
+import { ReactNode, Children, isValidElement, cloneElement, useState, useRef, useEffect } from 'react'
 import { ModalContainer } from '@/components/Managements/ModalContainer'
 import { FooterContainer } from '@/components/Managements/FooterContainer'
 import { OpenButton } from '@/components/Presentations/OpenButton'
