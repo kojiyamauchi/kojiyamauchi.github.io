@@ -2,7 +2,7 @@
   Image
 */
 
-import React, { CSSProperties } from 'react'
+import { CSSProperties } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
 import { ImageQuery } from 'graphql-types'

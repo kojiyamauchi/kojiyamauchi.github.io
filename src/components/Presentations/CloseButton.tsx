@@ -2,7 +2,7 @@
   Close Button.
 */
 
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 // import { BreakPoint } from '@/styles/StyleMixins'
 

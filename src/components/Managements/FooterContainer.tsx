@@ -2,7 +2,6 @@
   Footer Container.
 */
 
-import React from 'react'
 import { Copyright } from '@/components/Presentations/Copyright'
 import styled from 'styled-components'
 import { FlexCenter } from '@/styles/StyleMixins'

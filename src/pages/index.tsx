@@ -2,7 +2,7 @@
   Top Page.
 */
 
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { SEO } from '@/components/seo'
 import { Layout } from '@/components/layout'
 import { TypographyContainer } from '@/components/Managements/TypographyContainer'

@@ -2,7 +2,7 @@
   Background Image.
 */
 
-import React, { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GatsbyBackgroundImage, { IFluidObject } from 'gatsby-background-image'
 import { BackgroundImageQuery } from 'graphql-types'

@@ -2,7 +2,6 @@
   Jump To Old Portfolio.
 */
 
-import React from 'react'
 import styled from 'styled-components'
 
 const pathGraffitiArr = [
