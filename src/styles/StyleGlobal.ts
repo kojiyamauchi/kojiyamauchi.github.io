@@ -3,7 +3,7 @@
 */
 
 import { createGlobalStyle } from 'styled-components'
-import { GLOBAL_FONT, GLOBAL_COLOR } from '@/styles/StyleVariables'
+import { GLOBAL_FONT, GLOBAL_COLOR } from '@/styles/StyleConstants'
 // Default Setting for Font Awesome.
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
