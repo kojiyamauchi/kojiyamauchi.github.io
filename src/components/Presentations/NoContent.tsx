@@ -52,25 +52,23 @@ type Props = {
   className?: string
 }
 
-const NoContentComponent: React.FC<Props> = ({ className }): JSX.Element => {
-  return (
-    <svg
-      className={`${className} svg-graffiti`}
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 760 650"
-      enableBackground="new 0 0 760 650;"
-      xmlSpace="preserve"
-    >
-      {pathGraffitiArr.map((info, index) => (
-        <path className="path" d={info} key={index} />
-      ))}
-    </svg>
-  )
-}
+const NoContentComponent: React.FC<Props> = ({ className }): JSX.Element => (
+  <svg
+    className={`${className} svg-graffiti`}
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 760 650"
+    enableBackground="new 0 0 760 650;"
+    xmlSpace="preserve"
+  >
+    {pathGraffitiArr.map((info, index) => (
+      <path className="path" d={info} key={index} />
+    ))}
+  </svg>
+)
 
 const StyledComponent = styled(NoContentComponent)`
   width: 100%;

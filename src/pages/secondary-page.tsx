@@ -13,14 +13,12 @@ type Props = {
   location: { pathname: string }
 }
 
-const SecondaryPageComponent: React.FC<Props> = ({ location: { pathname } }): JSX.Element => {
-  return (
-    <Layout currentLocation={pathname}>
-      <SEO title="せかんだりー" pagePath={pathname} />
-      <Link to="/">せかんだりー</Link>
-    </Layout>
-  )
-}
+const SecondaryPageComponent: React.FC<Props> = ({ location: { pathname } }): JSX.Element => (
+  <Layout currentLocation={pathname}>
+    <SEO title="せかんだりー" pagePath={pathname} />
+    <Link to="/">せかんだりー</Link>
+  </Layout>
+)
 
 export default styled(SecondaryPageComponent)`
   ${PagesStyle}

@@ -12,17 +12,15 @@ type Props = {
   location: { pathname: string }
 }
 
-const NotFoundPageComponent: React.FC<Props> = ({ className, location: { pathname } }): JSX.Element => {
-  return (
-    <Layout currentLocation={pathname}>
-      <SEO title="404: Not found" pagePath={pathname} />
-      <main className={className}>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </main>
-    </Layout>
-  )
-}
+const NotFoundPageComponent: React.FC<Props> = ({ className, location: { pathname } }): JSX.Element => (
+  <Layout currentLocation={pathname}>
+    <SEO title="404: Not found" pagePath={pathname} />
+    <main className={className}>
+      <h1>NOT FOUND</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </main>
+  </Layout>
+)
 
 export default styled(NotFoundPageComponent)`
   ${PagesStyle}
