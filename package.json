@@ -100,7 +100,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js,jsx}": "eslint　--fix --max-warnings 0",
+    "src/**/*.{ts,tsx,js,jsx}": ["eslint --fix --max-warnings 0", "stylelint"],
     "gatsby-*.js": "prettier --write --no-semi --single-quote --trailing-comma none --print-width 160",
     "setup.js": "prettier --write --no-semi --single-quote --trailing-comma none --print-width 160"
   },
