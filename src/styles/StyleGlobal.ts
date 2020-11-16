@@ -90,7 +90,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
     font-family: ${GLOBAL_FONT};
     line-height: 1;
@@ -100,14 +99,6 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-
-    @supports (-webkit-touch-callout: none) {
-      /* height: -webkit-fill-available; */
-    }
-
-    @media all and (-ms-high-contrast: none) {
-      /* display: block; */
-    }
   }
 
   article,

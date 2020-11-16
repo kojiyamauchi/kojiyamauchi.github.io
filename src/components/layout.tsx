@@ -71,7 +71,7 @@ const LayoutComponent: React.FC<Props> = ({ className, children, currentLocation
 
 const StyledComponent = styled(LayoutComponent)`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ const StyledComponent = styled(LayoutComponent)`
   overflow: hidden;
 
   @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
   }
 
   > *:not(.open-button):not(.close-button):not(.modal-container) {
