@@ -14,7 +14,7 @@ type Props = {
   visited: boolean
 }
 
-const TypographyContainerComponent: React.FC<Props> = ({ className, visited }): JSX.Element => {
+const TypographyContainerComponent: React.VFC<Props> = ({ className, visited }): JSX.Element => {
   const [countUp, setCountUp] = useState(0)
   const myComponent = useRef<HTMLDivElement>(null)
 
@@ -52,18 +52,18 @@ const TypographyContainerComponent: React.FC<Props> = ({ className, visited }): 
       () => setCountUp(countUp + 1),
       /* eslint-disable */
       countUp === 0
-      ? window.innerWidth <= 768
-        ? 0
-        : 1250
-      : countUp === 1
-      ? 300
-      : countUp > 1 && countUp < 24
-      ? 275
-      : countUp === 24
-      ? 2050
-      : countUp > 24 && countUp < 29
-      ? 350
-      : 300
+        ? window.innerWidth <= 768
+          ? 0
+          : 1250
+        : countUp === 1
+        ? 300
+        : countUp > 1 && countUp < 24
+        ? 275
+        : countUp === 24
+        ? 2050
+        : countUp > 24 && countUp < 29
+        ? 350
+        : 300
       /* eslint-enable */
     )
 

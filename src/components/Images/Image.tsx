@@ -14,7 +14,7 @@ type Props = {
   fileName: string
 }
 
-export const Image: React.FC<Props> = ({ className, style, alt, fileName }): JSX.Element => {
+export const Image: React.VFC<Props> = ({ className, style, alt, fileName }): JSX.Element => {
   const { allImageSharp } = useStaticQuery<ImageQuery>(graphql`
     query Image {
       allImageSharp {

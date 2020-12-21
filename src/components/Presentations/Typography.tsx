@@ -74,7 +74,7 @@ type Props = {
   visited: boolean
 }
 
-const TypographyComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const TypographyComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className} id="typography-component">
     <svg
       version="1.1"

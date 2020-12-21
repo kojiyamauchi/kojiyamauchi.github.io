@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { ReactNode, Children, isValidElement, cloneElement, useState, useRef, useEffect } from 'react'
+import { Children, isValidElement, cloneElement, useState, useRef, useEffect } from 'react'
 import { ModalContainer } from '@/components/Managements/ModalContainer'
 import { FooterContainer } from '@/components/Managements/FooterContainer'
 import { OpenButton } from '@/components/Presentations/OpenButton'
@@ -15,7 +15,6 @@ import styled from 'styled-components'
 import { GlobalStyle } from '@/styles/StyleGlobal'
 
 type Props = {
-  children: ReactNode
   className?: string
   currentLocation: string
 }

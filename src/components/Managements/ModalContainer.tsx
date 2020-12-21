@@ -226,7 +226,7 @@ type Props = {
   switchModal: (myComponent: HTMLDivElement) => void
 }
 
-const ModalContainerComponent: React.FC<Props> = ({ className, switchModal }): JSX.Element => {
+const ModalContainerComponent: React.VFC<Props> = ({ className, switchModal }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

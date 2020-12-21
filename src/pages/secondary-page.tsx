@@ -13,7 +13,7 @@ type Props = {
   location: { pathname: string }
 }
 
-const SecondaryPageComponent: React.FC<Props> = ({ location: { pathname } }): JSX.Element => (
+const SecondaryPageComponent: React.VFC<Props> = ({ location: { pathname } }): JSX.Element => (
   <Layout currentLocation={pathname}>
     <SEO title="せかんだりー" pagePath={pathname} />
     <Link to="/">せかんだりー</Link>
