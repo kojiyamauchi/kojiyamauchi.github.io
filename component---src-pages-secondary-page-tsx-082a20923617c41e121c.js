@@ -1,2 +1,2 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[7],{XRqp:function(n,e,t){"use strict";t.r(e);var c=t("nKUr"),a=t("H8eV"),o=t("9Dj+"),i=t("Wbzz"),r=t("vOnD"),p=t("zowL");e.default=Object(r.c)((function(n){var e=n.location.pathname;return Object(c.jsxs)(o.a,{currentLocation:e,children:[Object(c.jsx)(a.a,{title:"せかんだりー",pagePath:e}),Object(c.jsx)(i.Link,{to:"/",children:"せかんだりー"})]})})).withConfig({displayName:"secondary-page",componentId:"lncm3r-0"})(["",""],p.c)}}]);
-//# sourceMappingURL=component---src-pages-secondary-page-tsx-4c4f55275fa8d6931ad2.js.map
+//# sourceMappingURL=component---src-pages-secondary-page-tsx-082a20923617c41e121c.js.map
