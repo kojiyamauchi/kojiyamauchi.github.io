@@ -10,7 +10,7 @@ type Props = {
   className?: string
 }
 
-const FooterContainerComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const FooterContainerComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <Copyright parent="footer" />
   </div>

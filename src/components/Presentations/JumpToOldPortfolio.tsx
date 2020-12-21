@@ -61,7 +61,7 @@ type Props = {
   className?: string
 }
 
-const JumpToOldPortfolioComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const JumpToOldPortfolioComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <svg
     className={`${className} svg-graffiti`}
     version="1.1"

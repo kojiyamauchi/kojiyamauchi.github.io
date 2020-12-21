@@ -20,7 +20,7 @@ type Props = {
   hideCloseButton: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
-const CloseButtonComponent: React.FC<Props> = ({ className, showCloseButton, hideCloseButton }): JSX.Element => {
+const CloseButtonComponent: React.VFC<Props> = ({ className, showCloseButton, hideCloseButton }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

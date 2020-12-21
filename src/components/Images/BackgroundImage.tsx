@@ -2,13 +2,12 @@
   Background Image.
 */
 
-import { ReactNode, CSSProperties } from 'react'
+import { CSSProperties } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GatsbyBackgroundImage, { IFluidObject } from 'gatsby-background-image'
 import { BackgroundImageQuery } from 'graphql-types'
 
 type Props = {
-  children: ReactNode
   tag: 'main' // TODO: Maybe Can't Dynamically Specify Type with Generics etc.
   className?: string
   style?: CSSProperties

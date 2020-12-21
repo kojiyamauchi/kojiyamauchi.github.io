@@ -17,7 +17,7 @@ type Props = {
   pagePath?: string
 }
 
-export const SEO: React.FC<Props> = ({ lang = 'ja', meta = [], ...props }): JSX.Element => {
+export const SEO: React.VFC<Props> = ({ lang = 'ja', meta = [], ...props }): JSX.Element => {
   const { site } = useStaticQuery<SeoQuery>(
     graphql`
       query Seo {

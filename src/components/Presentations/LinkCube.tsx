@@ -29,7 +29,7 @@ type Props = {
   rotateZ: number
 }
 
-export const LinkCube: React.FC<Props> = ({ textureName, linkUrl, positionValue, positionFn, cubeSize, rotateX, rotateY, rotateZ }): JSX.Element => {
+export const LinkCube: React.VFC<Props> = ({ textureName, linkUrl, positionValue, positionFn, cubeSize, rotateX, rotateY, rotateZ }): JSX.Element => {
   const ref = useRef({} as THREE.Mesh)
   const texture = useLoader(THREE.TextureLoader, withPrefix(`/texture_${textureName}.png`))
 

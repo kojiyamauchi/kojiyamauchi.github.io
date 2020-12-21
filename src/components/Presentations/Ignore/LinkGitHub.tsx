@@ -10,7 +10,7 @@ type Props = {
   className?: string
 }
 
-const LinkGitHubComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const LinkGitHubComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <Link className={`${className} link-github`} to="/secondary-page">
     <svg
       version="1.1"

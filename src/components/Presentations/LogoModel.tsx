@@ -372,7 +372,7 @@ type Props = {
   visited: boolean
 }
 
-const LogoModelComponent: React.FC<Props> = ({ className, visited }): JSX.Element => {
+const LogoModelComponent: React.VFC<Props> = ({ className, visited }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

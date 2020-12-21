@@ -26,7 +26,7 @@ type Props = {
   hideOpenButton: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
-const OpenButtonComponent: React.FC<Props> = ({ className, showOpenButton, hideOpenButton }): JSX.Element => {
+const OpenButtonComponent: React.VFC<Props> = ({ className, showOpenButton, hideOpenButton }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
   const showLetter = () => {

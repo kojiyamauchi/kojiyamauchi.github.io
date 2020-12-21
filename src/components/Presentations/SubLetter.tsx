@@ -10,7 +10,9 @@ type Props = {
   visited: boolean
 }
 
-const SubLetterComponent: React.FC<Props> = ({ className }): JSX.Element => <p className={`${className} sub-letter`}>Logo 3D Models / kojiyamauchi.github.io</p>
+const SubLetterComponent: React.VFC<Props> = ({ className }): JSX.Element => (
+  <p className={`${className} sub-letter`}>Logo 3D Models / kojiyamauchi.github.io</p>
+)
 
 const introductionCssProperties = `
 visibility: hidden;
