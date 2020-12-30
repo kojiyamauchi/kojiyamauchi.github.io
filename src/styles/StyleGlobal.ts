@@ -80,27 +80,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow-wrap: break-word;
   }
 
-  html {
-    width: 100vw;
-    font-size: 62.5%;
-  }
-
-  body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    overflow-x: hidden;
-    font-family: ${GLOBAL_FONT};
-    line-height: 1;
-    color: ${GLOBAL_COLOR};
-    letter-spacing: 0;
-    background: #fff;
-    -webkit-overflow-scrolling: touch;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-
   article,
   aside,
   details,
@@ -109,6 +88,7 @@ export const GlobalStyle = createGlobalStyle`
   footer,
   header,
   hgroup,
+  main,
   menu,
   nav,
   section {
@@ -208,5 +188,26 @@ export const GlobalStyle = createGlobalStyle`
     /* IE Hack */
 
     * {}
+  }
+
+  html {
+    width: 100vw;
+    font-size: 62.5%;
+  }
+
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: ${GLOBAL_FONT};
+    line-height: 1;
+    color: ${GLOBAL_COLOR};
+    letter-spacing: 0;
+    background: #fff;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 `
