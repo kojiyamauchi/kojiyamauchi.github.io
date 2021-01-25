@@ -26,7 +26,7 @@ const TypographyContainerComponent: React.VFC<Props> = ({ className, visited }):
 
     const average = strokeLengthArr.reduce((accumulator, current) => (accumulator! += current!), 0)! / strokeLengthArr.length
 
-    const typographyFn = () => {
+    const typographyFn = (): void => {
       requestAnimationFrame(() => {
         gsap.fromTo(
           `#${myComponent.current!.firstElementChild!.id} .path-${countUp}`,
@@ -44,7 +44,7 @@ const TypographyContainerComponent: React.VFC<Props> = ({ className, visited }):
       })
     }
 
-    const subLetterFn = () => myComponent.current!.lastElementChild!.classList.add('is-active')
+    const subLetterFn = (): void => myComponent.current!.lastElementChild!.classList.add('is-active')
 
     !visited && countUp >= 1 && countUp <= 29 ? typographyFn() : countUp === 30 && subLetterFn()
 
@@ -69,7 +69,7 @@ const TypographyContainerComponent: React.VFC<Props> = ({ className, visited }):
 
     if (countUp === 30) clearTimeout(timeID)
 
-    return () => clearTimeout(timeID)
+    return (): void => clearTimeout(timeID)
   }, [countUp, visited])
 
   return (

@@ -29,7 +29,7 @@ const StyledComponent = styled(SubLetterComponent)`
   font-style: italic;
   text-align: center;
   text-shadow: 2px 2px 1px #fff;
-  ${(props) => !props.visited && introductionCssProperties}
+  ${(props): string | false => !props.visited && introductionCssProperties}
   ${BreakPoint.largeMobile` font-size: 2.4em; `}
   ${BreakPoint.largeMobile`  text-align: right;`}
 

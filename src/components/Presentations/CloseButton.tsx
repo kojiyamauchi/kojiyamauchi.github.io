@@ -29,7 +29,7 @@ const CloseButtonComponent: React.VFC<Props> = ({ className, showCloseButton, hi
       await sleep(75 * index)
       selector.classList.add('is-active')
     })
-    return () => {}
+    return (): void => {}
   })
 
   return (

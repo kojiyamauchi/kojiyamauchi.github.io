@@ -1,9 +1,11 @@
-type BreakPoint = 'smallMobile' | 'mobile' | 'largeMobile' | 'tablet' | 'desktop' | 'largeDesktop' | 'extraLargeDesktop'
+export type ValueOf<T> = T[keyof T]
 
-type BreakPointWidthMember = {
+export type BreakPoint = 'smallMobile' | 'mobile' | 'largeMobile' | 'tablet' | 'desktop' | 'largeDesktop' | 'extraLargeDesktop'
+
+export type BreakPointWidthMember = {
   readonly [P in BreakPoint]: number
 }
 
-type BreakPointMember = {
+export type BreakPointMember = {
   [P in BreakPoint]: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
 }

@@ -9,7 +9,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import styled from 'styled-components'
 
-const forClientSideBuild = () => {
+const forClientSideBuild = (): {
+  renderer: THREE.WebGLRenderer
+  setModel: (visited: boolean) => void
+  removeModel: () => void
+  responsive: () => void
+} => {
   // Switches for Debug.
   const switches = {
     launchModel: true,
@@ -40,7 +45,10 @@ const forClientSideBuild = () => {
   }
 
   // Loader Instance.
-  const threeLoader = () => {
+  const threeLoader = (): {
+    gltfLoader: GLTFLoader
+    textureLoader: THREE.TextureLoader
+  } => {
     const gltfLoader = new GLTFLoader()
     const textureLoader = new THREE.TextureLoader()
     return { gltfLoader, textureLoader }
@@ -48,7 +56,7 @@ const forClientSideBuild = () => {
   const { gltfLoader, textureLoader } = threeLoader()
 
   // Initial Texture Setup for Mesh Instance.
-  const initialTextureSetup = () => {
+  const initialTextureSetup = (): THREE.Texture[] => {
     const texture = materials.texturePath.map((info, index) => {
       const generateTexture = textureLoader.load(info)
       if (index !== 2) {
@@ -63,7 +71,17 @@ const forClientSideBuild = () => {
   const texture = initialTextureSetup()
 
   // Each Instance.
-  const threeInstance = () => {
+  const threeInstance = (): {
+    renderer: THREE.WebGLRenderer
+    scene: THREE.Scene
+    camera: THREE.PerspectiveCamera
+    model: THREE.Group
+    meshGray: THREE.Mesh<THREE.PlaneGeometry, THREE.MeshLambertMaterial>
+    meshBlack: THREE.Mesh
+    spriteMaterial: THREE.SpriteMaterial
+    orbitControls: OrbitControls
+    sphere: THREE.Mesh
+  } => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(45, sceneSize.width / sceneSize.height, 1, 1000)
@@ -78,7 +96,13 @@ const forClientSideBuild = () => {
   const { renderer, scene, camera, model, meshGray, meshBlack, spriteMaterial, orbitControls, sphere } = threeInstance()
 
   // Light Instance.
-  const threeLight = () => {
+  const threeLight = (): {
+    directionalLightTop: THREE.DirectionalLight
+    directionalLightBottom: THREE.DirectionalLight
+    spotLight: THREE.SpotLight
+    pointLight: THREE.PointLight
+    ambientLight: THREE.AmbientLight
+  } => {
     const directionalLightTop = new THREE.DirectionalLight(0xffffff, 1)
     const directionalLightBottom = new THREE.DirectionalLight(0xffffff, 1)
     const spotLight = new THREE.SpotLight(0xffffff, 1)
@@ -90,7 +114,15 @@ const forClientSideBuild = () => {
   const { directionalLightTop, directionalLightBottom, spotLight, pointLight } = threeLight()
 
   // Helper Instance.
-  const threeHelper = () => {
+  const threeHelper = (): {
+    axesHelper: THREE.AxesHelper
+    gridHelper: THREE.GridHelper
+    cameraHelper: THREE.CameraHelper
+    directionalLightTopHelper: THREE.DirectionalLightHelper
+    directionalLightBottomHelper: THREE.DirectionalLightHelper
+    spotLightHelper: THREE.SpotLightHelper
+    pointLightHelper: THREE.PointLightHelper
+  } => {
     const axesHelper = new THREE.AxesHelper(1000)
     const gridHelper = new THREE.GridHelper(250, 20, '#000000', '#9a12b3')
     const cameraHelper = new THREE.CameraHelper(camera)
@@ -166,7 +198,7 @@ const forClientSideBuild = () => {
   orbitControls.autoRotateSpeed = -1 // .autoRotate's Left Rotation by Default, Right Rotation by Setting .autoRotateSpeed to Negative Value.
 
   // Model's Rotation Loop.
-  const modelLoop = () => {
+  const modelLoop = (): void => {
     if (switches.launchModel && switches.launchModelRotation) {
       const duration = 0.01
       const rotateX = model.rotation.x + duration
@@ -178,7 +210,9 @@ const forClientSideBuild = () => {
   }
 
   // Introductions.
-  const introductions = () => {
+  const introductions = (): {
+    introductionCore: () => void
+  } => {
     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
     const general: { setControls: boolean; taskDone: boolean } = {
@@ -206,7 +240,10 @@ const forClientSideBuild = () => {
       heightDuration: 0.1
     }
 
-    const setBombVector = () => {
+    const setBombVector = (): {
+      x: number
+      y: number
+    }[] => {
       let vectorY = 3
       const bombVectorArr: { x: number; y: number }[] = Array.from({ length: 27 }, (_info, index) => {
         const obj = {
@@ -224,7 +261,7 @@ const forClientSideBuild = () => {
       switchTextureFirst: 0,
       switchTextureSecond: 0,
       switchTextureThird: 0,
-      fn: (switchTexture: number, depthTest: boolean, scaleX = 9, scaleY = 6.5, scaleZ = 9, positionX = 0, positionY = -1.75, positionZ = 0) => {
+      fn: (switchTexture: number, depthTest: boolean, scaleX = 9, scaleY = 6.5, scaleZ = 9, positionX = 0, positionY = -1.75, positionZ = 0): void => {
         spriteMaterial.map!.offset = new THREE.Vector2(0.125 * bombVectorArr[switchTexture].x, 0.25 * bombVectorArr[switchTexture].y)
         spriteMaterial.map!.repeat = new THREE.Vector2(1 / 8, 1 / 4)
         spriteMaterial.depthTest = depthTest
@@ -235,7 +272,7 @@ const forClientSideBuild = () => {
       }
     }
 
-    const introductionCore = () => {
+    const introductionCore = (): void => {
       if (!general.taskDone) {
         const radian = (cameraMove.angle * Math.PI) / 180
         const cameraRange = cameraMove.rangeCurrent < cameraMove.rangeLimit ? (cameraMove.rangeCurrent += cameraMove.rangeDuration) : cameraMove.rangeLimit
@@ -307,18 +344,21 @@ const forClientSideBuild = () => {
   const { introductionCore } = introductions()
 
   // Models Core.
-  const modelsFn = () => {
+  const modelsFn = (): {
+    setModel: (visited: boolean) => void
+    removeModel: () => void
+  } => {
     let frameID: number
-    const setModel = (visited: boolean) => {
+    const setModel = (visited: boolean): void => {
       // eslint-disable-next-line @typescript-eslint/no-extra-semi
-      ;(function core() {
+      ;(function core(): void {
         modelLoop()
         !visited ? introductionCore() : (orbitControls.enabled = true)
         renderer.render(scene, camera)
         frameID = requestAnimationFrame(core)
       })()
     }
-    const removeModel = () => {
+    const removeModel = (): void => {
       cancelAnimationFrame(frameID)
     }
     return { setModel, removeModel }
@@ -326,7 +366,7 @@ const forClientSideBuild = () => {
   const { setModel, removeModel } = modelsFn()
 
   // れすぽん.
-  const responsive = () => {
+  const responsive = (): void => {
     const screenWidth = window.innerWidth
     const screenHeight = window.innerHeight
     renderer.setSize(screenWidth, screenHeight)
@@ -381,7 +421,7 @@ const LogoModelComponent: React.VFC<Props> = ({ className, visited }): JSX.Eleme
     setModel(visited)
     window.addEventListener('resize', responsive)
 
-    return () => {
+    return (): void => {
       renderer.dispose()
       renderer.domElement.remove()
       removeModel()
