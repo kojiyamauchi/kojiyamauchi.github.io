@@ -4,73 +4,74 @@ env:
   node: true
   es6: true
   jest/globals: true
-parser: "@typescript-eslint/parser"
+parser: '@typescript-eslint/parser'
 parserOptions:
   # When Use TypeScript, Setting of Root Dir. ( To Find for tsconfig.json )
-  tsconfigRootDir: "."
+  tsconfigRootDir: '.'
   # When Use TypeScript, Import tsconfig Setting.
-  project: "./tsconfig.json"
+  project: './tsconfig.json'
   sourceType: module
   ecmaFeatures:
     jsx: true
 plugins:
-  - "@typescript-eslint"
+  - '@typescript-eslint'
   - import
   - jest
   - react
   - react-hooks
 settings:
   react:
-    version: "detect"
+    version: 'detect'
   node:
     tryExtensions:
-      - ".js"
-      - ".ts"
-      - ".jsx"
-      - ".tsx"
-      - ".json"
-      - ".node"
+      - '.js'
+      - '.ts'
+      - '.jsx'
+      - '.tsx'
+      - '.json'
+      - '.node'
 #
 #
 # Set Linting Rules Below.
 extends:
-  - "eslint:recommended"
-  - "plugin:@typescript-eslint/recommended"
-  - "plugin:react/recommended"
-  - "prettier"
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:react/recommended'
+  - 'prettier'
 rules:
   indent: off
-  "@typescript-eslint/no-non-null-assertion": off
-  "@typescript-eslint/naming-convention": off
-  "@typescript-eslint/no-namespace": off
-  "@typescript-eslint/member-delimiter-style": off
-  "@typescript-eslint/no-empty-function": off
-  "@typescript-eslint/prefer-interface": off
-  "@typescript-eslint/no-unused-vars":
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/naming-convention': off
+  '@typescript-eslint/no-namespace': off
+  '@typescript-eslint/member-delimiter-style': off
+  '@typescript-eslint/no-empty-function': off
+  '@typescript-eslint/prefer-interface': off
+  '@typescript-eslint/explicit-function-return-type': warn
+  '@typescript-eslint/no-unused-vars':
     - error
-    - varsIgnorePattern: "^BreakPoint"
-  "max-classes-per-file":
+    - varsIgnorePattern: '^AddIgnoreName'
+  'max-classes-per-file':
     - error
     - 2
-  "no-bitwise":
+  'no-bitwise':
     - error
     - allow:
-        - "~"
-  "import/order": off
-  "sort-keys": off
-  "no-multiple-empty-lines": off
-  "lines-between-class-members":
+        - '~'
+  'import/order': off
+  'sort-keys': off
+  'no-multiple-empty-lines': off
+  'lines-between-class-members':
     - error
     - always
     - exceptAfterSingleLine: true
-  "no-console": off
-  "unicorn/number-literal-case": off
-  "spaced-comment":
+  'no-console': off
+  'unicorn/number-literal-case': off
+  'spaced-comment':
     - error
     - always
-  "react/prop-types": off
-  "react-hooks/rules-of-hooks": error
-  "react-hooks/exhaustive-deps": warn
-  "react/jsx-uses-react": off
-  "react/react-in-jsx-scope": off
+  'react/prop-types': off
+  'react-hooks/rules-of-hooks': error
+  'react-hooks/exhaustive-deps': warn
+  'react/jsx-uses-react': off
+  'react/react-in-jsx-scope': off
   # "@typescript-eslint/ban-ts-comment": error
