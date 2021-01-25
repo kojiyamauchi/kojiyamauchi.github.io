@@ -20,7 +20,7 @@ type Props = {
 const TopPageComponent: React.VFC<Props> = ({ className, location: { pathname } }): JSX.Element => {
   useEffect(() => {
     isVisited = true
-    return () => {}
+    return (): void => {}
   })
 
   return (

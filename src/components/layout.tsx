@@ -52,7 +52,7 @@ const LayoutComponent: React.FC<Props> = ({ className, children, currentLocation
 
   useEffect(() => {
     switchGlobalMenu.switchBlur(myComponent.current!)
-    return () => {}
+    return (): void => {}
   })
 
   return (

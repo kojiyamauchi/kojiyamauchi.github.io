@@ -14,7 +14,7 @@ const sleep = (ms: number): Promise<number> => {
   })
 }
 
-const randomClass = () => {
+const randomClass = (): string => {
   const classArr = ['is-active01', 'is-active02', 'is-active03']
   const generateRandomClass = classArr[Math.floor(Math.random() * classArr.length)]
   return generateRandomClass
@@ -29,14 +29,14 @@ type Props = {
 const OpenButtonComponent: React.VFC<Props> = ({ className, showOpenButton, hideOpenButton }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
-  const showLetter = () => {
+  const showLetter = (): void => {
     Array.from(myComponent.current!.firstElementChild!.children, async (selector, index) => {
       await sleep(75 * index)
       selector.classList.add('is-active')
     })
   }
 
-  const hideLetter = () => {
+  const hideLetter = (): void => {
     Array.from(myComponent.current!.firstElementChild!.children, async (selector, index) => {
       await sleep(75 * index)
       selector.classList.remove('is-active')
@@ -47,7 +47,7 @@ const OpenButtonComponent: React.VFC<Props> = ({ className, showOpenButton, hide
     showOpenButton(myComponent.current!)
     myComponent.current!.addEventListener('mouseenter', () => window.innerWidth > 768 && showLetter())
     myComponent.current!.addEventListener('mouseleave', () => window.innerWidth > 768 && hideLetter())
-    return () => {}
+    return (): void => {}
   })
 
   return (

@@ -180,7 +180,7 @@ const generatePositionValue = cubeProps.map((info) => {
   return { x, y }
 })
 
-const generatePosition = (mobile: number, tablet: number, deskTop: number) => {
+const generatePosition = (mobile: number, tablet: number, deskTop: number): number => {
   const mobilePosition = mobile
   const tabletPosition = tablet
   const deskTopPosition = deskTop
@@ -197,16 +197,16 @@ const generatePosition = (mobile: number, tablet: number, deskTop: number) => {
   return value
 }
 
-const generateCubeSize = () => {
+const generateCubeSize = (): number => {
   const result = typeof window !== 'undefined' && window.innerWidth <= 1024 ? 0.5 : 0.6
   let value = result
   typeof window !== 'undefined' && window.addEventListener('resize', () => (value = result))
   return value
 }
 
-const generateRotateDuration = () => Math.random() * (0.02 - 0.01) + 0.01
+const generateRotateDuration = (): number => Math.random() * (0.02 - 0.01) + 0.01
 
-const switchGraffiti = (myComponentCurrent: HTMLDivElement) => {
+const switchGraffiti = (myComponentCurrent: HTMLDivElement): void => {
   myComponentCurrent.querySelector('.copyright')?.addEventListener('mouseenter', () => {
     if (window.innerWidth > 768) {
       myComponentCurrent.querySelector('.no-content')?.classList.remove('is-active')
@@ -232,7 +232,7 @@ const ModalContainerComponent: React.VFC<Props> = ({ className, switchModal }): 
   useEffect(() => {
     switchModal(myComponent.current!)
     switchGraffiti(myComponent.current!)
-    return () => {}
+    return (): void => {}
   })
 
   return (

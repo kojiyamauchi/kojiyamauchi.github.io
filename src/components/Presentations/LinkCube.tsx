@@ -47,9 +47,9 @@ export const LinkCube: React.VFC<Props> = ({ textureName, linkUrl, positionValue
         0
       ]}
       ref={ref}
-      onClick={() => open(linkUrl, '_blank')}
-      onPointerOver={() => (document.body.style.cursor = 'pointer')}
-      onPointerOut={() => (document.body.style.cursor = 'default')}
+      onClick={(): Window | null => open(linkUrl, '_blank')}
+      onPointerOver={(): string => (document.body.style.cursor = 'pointer')}
+      onPointerOut={(): string => (document.body.style.cursor = 'default')}
     >
       <boxGeometry attach="geometry" args={[cubeSize(), cubeSize(), cubeSize()]} />
       <meshPhongMaterial attach="material" map={texture} side={THREE.DoubleSide} color="#ffffff" />

@@ -117,7 +117,7 @@ const StyledComponent = styled(TypographyComponent)`
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 10;
-    ${(props) => !props.visited && introductionCssProperties}
+    ${(props): string | false => !props.visited && introductionCssProperties}
   }
 
   .draw-typography {
@@ -127,7 +127,7 @@ const StyledComponent = styled(TypographyComponent)`
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 10;
-    ${(props) => !props.visited && introductionCssProperties}
+    ${(props): string | false => !props.visited && introductionCssProperties}
   }
 `
 
