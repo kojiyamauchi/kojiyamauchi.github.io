@@ -51,10 +51,10 @@ export const SEO: React.VFC<Props> = (props): JSX.Element => {
       <meta name="msapplication-TileColor" content="#da532c" key="msapplication-tile-color" />
       <meta name="theme-color" content="#ffffff" key="theme-color" />
       <link rel="canonical" href={setSeo.location} key="canonical" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC67LLPQDS"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-18W6JCML94"></script>
       <script
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FC67LLPQDS');`
+          __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-18W6JCML94');`
         }}
       />
     </Head>
