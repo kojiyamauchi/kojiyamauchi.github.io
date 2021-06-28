@@ -50,9 +50,6 @@ jobs:
       - name: Do Build
         if: env.LAUNCH_BUILD == 'on'
         run: yarn static
-      - name: Clean Delivery Directory
-        if: env.LAUNCH_DEPLOY == 'on' && env.DEPLOY_TYPE != 'ftp'
-        run: rm delivery/.gitkeep
       - name: Deploy GitHub Pages / Netlify
         if: env.LAUNCH_DEPLOY == 'on' && env.DEPLOY_TYPE != 'ftp'
         uses: peaceiris/actions-gh-pages@v3
