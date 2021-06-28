@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <img
+    alt="Unit Test Image"
+    class="image generic-image"
+    loading="lazy"
+    src="webps/logo.webp"
+    style="display: block; width: 100%; min-width: none; max-width: none; height: auto; min-height: none; max-height: none; margin: 0px auto;"
+  />
+</DocumentFragment>
+`;

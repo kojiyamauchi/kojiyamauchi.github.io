@@ -1,0 +1,38 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  display: none;
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 1px #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.75s ease-out;
+  transform: translateX(-30px);
+  @include mixins.aboveLargeMobile {
+    font-size: 2.4em;
+    text-align: right;
+  }
+
+  &[class~=is-display] {
+    display: block;
+  }
+
+  &[class~=is-active] {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.75s ease-out;
+    transform: translateX(0);
+  }
+
+  &[class~=is-visited] {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+    transform: none;
+    will-change: auto ;
+  }
+
+}

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Navigation Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <ul
+    class="wrapper error-page-navigation"
+  >
+    <li
+      class="error-page-navi-list"
+    >
+      <a
+        class="link error-page-navi-link"
+        href="/"
+      >
+        Back to Top Page
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

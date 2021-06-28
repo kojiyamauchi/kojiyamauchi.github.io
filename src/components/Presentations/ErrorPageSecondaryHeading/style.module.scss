@@ -1,0 +1,17 @@
+@use "@/styles/mixins";
+
+.secondary-heading {
+  width: 100%;
+  font-size: 3em;
+  font-weight: lighter;
+  text-align: center;
+
+  @include mixins.aboveLargeMobile {
+    font-size: 4.8em;
+  }
+}
+
+.is-translation {
+  transform: translateY(-100%);
+}
+

@@ -1,0 +1,63 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: absolute;
+  right: 0;
+  bottom: -136px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  font-family: inherit;
+  cursor: pointer;
+  visibility: hidden;
+  background-color: #f5a100;
+  border-radius: 60px;
+  transition: all 0.5s ease-in;
+  transform: translateY(0);
+  will-change: transform, visibility;
+
+  &[class~=is-active] {
+    visibility: visible;
+    transition: all 0.5s ease-out 0.5s;
+    transform: translateY(-136px);
+  }
+}
+
+.close-letter {
+  display: inline-block;
+  margin: 0 0 5px 0;
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  will-change: transform;
+
+  &[class~=is-active] {
+    animation: text-bounce 0.5s ease-out infinite;
+  }
+}
+@keyframes text-bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(2.5%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-2.5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

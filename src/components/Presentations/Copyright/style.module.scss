@@ -1,0 +1,34 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  font-family: Lobster, cursive, 'arial';
+  font-size: 1.5em;
+  cursor: pointer;
+  @include mixins.aboveLargeMobile {
+    font-size: 2.4em
+  }
+
+  &[class~=is-footer] {
+    color: #777;
+    text-shadow: 2px 2px 1px #fff;
+  }
+
+  &[class~=is-modal],
+  &[class~=is-about-me] {
+    color: #fff;
+  }
+
+  &[class~=is-error] {
+    color: #777;
+  }
+}
+
+.storybook-modal-wrapper,
+.storybook-about-me-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #777;
+}
