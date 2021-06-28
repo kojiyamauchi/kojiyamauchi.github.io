@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Container Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper button-container"
+  >
+    <button
+      class="wrapper close-button"
+    >
+      <span
+        class="close-letters-wrapper"
+      >
+        <span
+          class="close-letter close-letter"
+        >
+          C
+        </span>
+        <span
+          class="close-letter close-letter"
+        >
+          L
+        </span>
+        <span
+          class="close-letter close-letter"
+        >
+          O
+        </span>
+        <span
+          class="close-letter close-letter"
+        >
+          S
+        </span>
+        <span
+          class="close-letter close-letter"
+        >
+          E
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

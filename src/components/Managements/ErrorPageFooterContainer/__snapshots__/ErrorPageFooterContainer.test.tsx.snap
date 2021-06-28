@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Footer Container Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <footer
+    class="wrapper error-page-footer-container"
+  >
+    <a
+      class="wrapper undefined is-error"
+      href="http://kojiyamauchi.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      © 2021 All The Small Things, All Rights Reserved.
+    </a>
+  </footer>
+</DocumentFragment>
+`;
