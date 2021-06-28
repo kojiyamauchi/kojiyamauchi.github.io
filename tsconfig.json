@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-
     "strict": true,
     "alwaysStrict": true,
     "noEmitOnError": true,
@@ -14,27 +13,24 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-
+    "skipLibCheck": true,
     "target": "esnext",
     "module": "esnext",
-    "lib": [ "esnext", "dom" ],
+    "lib": ["esnext", "dom"],
     "moduleResolution": "node",
     "allowJs": true,
     "checkJs": true,
     "sourceMap": true,
     "declaration": false,
-    "noEmit": false,
+    "noEmit": true,
     "emitDeclarationOnly": false,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "outDir": "./public/",
-    "paths": { "@/*": [ "src/*" ]}
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

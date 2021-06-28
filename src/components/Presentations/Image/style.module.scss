@@ -1,0 +1,9 @@
+@use "@/styles/mixins";
+
+.loading {
+  @include mixins.aboveLargeMobile {}
+}
+
+.image {
+  @include mixins.aboveLargeMobile {}
+}

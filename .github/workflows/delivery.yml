@@ -14,7 +14,7 @@ env:
   LAUNCH_BUILD: on # Launch Build. [ on, off ]
   LAUNCH_DEPLOY: on # Launch Deployment. [ on, off ]
   DEPLOY_TYPE: github-pages # Deploy Type. [ github-pages, netlify, ftp ]
-  ENDPOINT_GITHUB_PAGES: https://kojiyamauchi.github.io/ # When Using GitHub Pages, Add Endpoint.
+  ENDPOINT_GITHUB_PAGES: https://kojiyamauchi.github.io # When Using GitHub Pages, Add Endpoint.
   ENDPOINT_NETLIFY: # When Using Netlify, Add Endpoint.
   ENDPOINT_FTP: # When Using FTP, Add Endpoint.
 
@@ -35,7 +35,6 @@ jobs:
           echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
           echo "LAUNCH_DEPLOY=${LAUNCH_DEPLOY}" >> $GITHUB_ENV
           echo "DEPLOY_TYPE=${DEPLOY_TYPE}" >> $GITHUB_ENV
-          echo "ENDPOINT_REDIRECT=${ENDPOINT_REDIRECT}" >> $GITHUB_ENV
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -50,14 +49,17 @@ jobs:
         run: yarn
       - name: Do Build
         if: env.LAUNCH_BUILD == 'on'
-        run: yarn build
+        run: yarn static
+      - name: Clean Delivery Directory
+        if: env.LAUNCH_DEPLOY == 'on' && env.DEPLOY_TYPE != 'ftp'
+        run: rm delivery/.gitkeep
       - name: Deploy GitHub Pages / Netlify
         if: env.LAUNCH_DEPLOY == 'on' && env.DEPLOY_TYPE != 'ftp'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: master
-          publish_dir: ./public
+          publish_branch: main
+          publish_dir: ./delivery
       - name: Preparation of Deploy by FTP
         if: env.LAUNCH_DEPLOY == 'on' && env.DEPLOY_TYPE == 'ftp'
         run: git restore yarn.lock
@@ -68,7 +70,7 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USER }}
           ftp-password: ${{ secrets.FTP_PASS }}
-          local-dir: public/
+          local-dir: delivery/
           git-ftp-args: --remote-root ${{ secrets.FTP_REMOTE_ROOT }} --all
 
   report:
@@ -78,7 +80,6 @@ jobs:
     steps:
       - name: Set Env
         run: |
-          echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
           echo "LAUNCH_DEPLOY=${LAUNCH_DEPLOY}" >> $GITHUB_ENV
           echo "DEPLOY_TYPE=${DEPLOY_TYPE}" >> $GITHUB_ENV
           echo "ENDPOINT_GITHUB_PAGES=${ENDPOINT_GITHUB_PAGES}" >> $GITHUB_ENV

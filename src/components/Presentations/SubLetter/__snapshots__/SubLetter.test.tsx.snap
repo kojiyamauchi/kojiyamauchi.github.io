@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sub Letter Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <h2
+    class="wrapper sub-letter is-visited is-display"
+  >
+    kojiyamauchi.github.io
+  </h2>
+</DocumentFragment>
+`;

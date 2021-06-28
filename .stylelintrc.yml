@@ -1,10 +1,7 @@
 syntax: scss
-processors: stylelint-processor-styled-components
 extends:
-  - stylelint-config-standard
-  - stylelint-config-styled-components
-ignoreFiles:
-  - .cache/**/*
+  - stylelint-config-recommended-scss
+  - stylelint-config-recess-order
 rules:
   indentation:
     - 2
@@ -21,9 +18,8 @@ rules:
   value-no-vendor-prefix:
     - true
     - ignoreValues:
-      - fill-available
+        - grid
+        - fill-available
   value-keyword-case:
     - lower
-    - ignoreKeywords: dummyValue
   selector-pseudo-element-colon-notation: single
-

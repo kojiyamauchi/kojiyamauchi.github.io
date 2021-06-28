@@ -26,7 +26,18 @@ jobs:
           echo "LAUNCH_ESLINT=${LAUNCH_ESLINT}" >> $GITHUB_ENV
           echo "LAUNCH_STYLELINT=${LAUNCH_STYLELINT}" >> $GITHUB_ENV
           echo "LAUNCH_JEST=${LAUNCH_JEST}" >> $GITHUB_ENV
-          if ls src/tests/*.test.ts > /dev/null 2>&1 || ls src/tests/*.test.tsx > /dev/null 2>&1 || ls src/tests/*.test.js > /dev/null 2>&1 || ls src/tests/*.test.jsx > /dev/null 2>&1
+          if ls src/components/**/**/*.test.ts > /dev/null 2>&1 \
+            || ls src/components/**/**/*.test.tsx > /dev/null 2>&1 \
+            || ls src/components/**/**/*.test.jsx > /dev/null 2>&1 \
+            || ls src/components/**/**/*.test.js > /dev/null 2>&1 \
+            || ls src/hooks/**/*.test.ts > /dev/null 2>&1 \
+            || ls src/hooks/**/*.test.tsx > /dev/null 2>&1 \
+            || ls src/hooks/**/*.test.jsx > /dev/null 2>&1 \
+            || ls src/hooks/**/*.test.js > /dev/null 2>&1 \
+            || ls src/tests/*.test.ts > /dev/null 2>&1 \
+            || ls src/tests/*.test.tsx > /dev/null 2>&1 \
+            || ls src/tests/*.test.js > /dev/null 2>&1 \
+            || ls src/tests/*.test.jsx > /dev/null 2>&1
           then
               echo "FILE_EXISTS=on" >> $GITHUB_ENV
           else
@@ -61,10 +72,10 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          stylelint_input: 'src/**/*.{ts,tsx,js,jsx}'
+          stylelint_input: 'src/**/*.scss'
       - name: Displayed stylelint Failure on Checks
         if: env.LAUNCH_STYLELINT == 'on'
-        run: yarn stylelint 'src/**/*.{ts,tsx,js,jsx}'
+        run: yarn stylelint 'src/**/*.scss'
       - name: Do Jest
         if: env.LAUNCH_JEST == 'on' && env.FILE_EXISTS == 'on'
         run: yarn jest
@@ -81,7 +92,8 @@ jobs:
         with:
           node-version: 14.x
       - name: Set Env
-        run: echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
+        run: |
+          echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -96,4 +108,4 @@ jobs:
         run: yarn
       - name: Do Build Test
         if: env.LAUNCH_BUILD == 'on'
-        run: yarn build
+        run: yarn static

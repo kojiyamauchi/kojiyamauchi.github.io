@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Header Container Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <header
+    class="wrapper error-page-header-container"
+  >
+    <h1
+      class="primary-heading error-page-primary-heading"
+    >
+      Error Page.
+    </h1>
+    <ul
+      class="wrapper error-page-navigation"
+    >
+      <li
+        class="error-page-navi-list"
+      >
+        <a
+          class="link error-page-navi-link"
+          href="/"
+        >
+          Back to Top Page
+        </a>
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;

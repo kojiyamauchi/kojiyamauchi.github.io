@@ -1,0 +1,39 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+
+  > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]) {
+    filter: blur(0);
+    transition: filter 0.5s ease-in;
+    will-change: filter;
+  }
+
+  &[class~=is-blur] {
+    > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]) {
+      filter: blur(5px);
+      transition: filter 0.5s ease-out 0.5s;
+    }
+  }
+}
+
+.main-content {
+  position: relative;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
