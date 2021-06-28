@@ -1,11 +1,21 @@
 export type ValueOf<T> = T[keyof T]
 
-export type BreakPoint = 'smallMobile' | 'mobile' | 'largeMobile' | 'tablet' | 'desktop' | 'largeDesktop' | 'extraLargeDesktop'
-
-export type BreakPointWidthMember = {
-  readonly [P in BreakPoint]: number
+export type PageProps = {
+  chooseLayout: 'fixedLayout' | 'errorLayout'
+  // For extract below line of code in Hygen
+  // prettier-ignore
+  pages: 'primary' | '404' | '500' | 'ui-test' | 'storybook'
 }
 
-export type BreakPointMember = {
-  [P in BreakPoint]: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+export type ModalTypes = {
+  isOpen: boolean
+}
+
+export type AboutMeTypes = {
+  isOpen: boolean
+}
+
+export type StoreTypes = {
+  modalStore: ModalTypes
+  aboutMeStore: AboutMeTypes
 }

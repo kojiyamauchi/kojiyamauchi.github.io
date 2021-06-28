@@ -1,3 +1,1 @@
-// enum AddEnumName {
-// Add Member.
-// }
+export enum AddEnumName {}
