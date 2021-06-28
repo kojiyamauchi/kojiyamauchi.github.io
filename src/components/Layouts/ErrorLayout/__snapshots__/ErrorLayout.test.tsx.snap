@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fixed Layout Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <div
+    class="ui-test wrapper error-layout"
+  >
+    <header
+      class="wrapper error-page-header-container"
+    >
+      <h1
+        class="primary-heading error-page-primary-heading"
+      >
+        Error Page.
+      </h1>
+      <ul
+        class="wrapper error-page-navigation"
+      >
+        <li
+          class="error-page-navi-list"
+        >
+          <a
+            class="link error-page-navi-link"
+            href="/"
+          >
+            Back to Top Page
+          </a>
+        </li>
+      </ul>
+    </header>
+    <main
+      class="main-content main-content"
+      style="background-image: url(webps/logo.webp);"
+    />
+    <footer
+      class="wrapper error-page-footer-container"
+    >
+      <a
+        class="wrapper undefined is-error"
+        href="http://kojiyamauchi.com"
+        rel="noreferrer"
+        target="_blank"
+      >
+        © 2021 All The Small Things, All Rights Reserved.
+      </a>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
