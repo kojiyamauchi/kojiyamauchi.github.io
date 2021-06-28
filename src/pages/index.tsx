@@ -1,39 +1,42 @@
 /*
   Top Page.
+  In 'getStaticPaths' && 'getStaticProps',
+  When the File Does Not Exist in the Specified Path.
+  'getStaticPaths' API's 'fallback' are...
+  fallback: false -> 404.
+  fallback: true -> CSR && SSR on Background, The Second and Subsequent Accesses Return SSR Cache.
+  fallback: blocking -> SSR && The Second and Subsequent Accesses Return SSR Cache.
 */
 
 import { useEffect } from 'react'
-import { SEO } from '@/components/seo'
-import { Layout } from '@/components/layout'
+import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
+import { PageProps } from '@/types/type'
+import { SEO } from '@/components/Seo'
 import { TypographyContainer } from '@/components/Managements/TypographyContainer'
-import { LogoModel } from '@/components/Presentations/LogoModel'
-import styled from 'styled-components'
-import { PagesStyle } from '@/styles/StyleMixins'
+import { DynamicComponentLogoModel } from '@/components/Presentations/LogoModel'
 
-let isVisited = false
+let visited = false
 
-type Props = {
-  className?: string
-  location: { pathname: string }
-}
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
+  props: {
+    chooseLayout: 'fixedLayout',
+    pages: 'primary'
+  }
+})
 
-const TopPageComponent: React.VFC<Props> = ({ className, location: { pathname } }): JSX.Element => {
-  useEffect(() => {
-    isVisited = true
-    return (): void => {}
-  })
+const PrimaryPage: React.VFC = (): JSX.Element => {
+  const router = useRouter()
+
+  useEffect(() => void (visited = true))
 
   return (
-    <Layout currentLocation={pathname}>
-      <SEO title="Re: All The Small Things," pagePath={pathname} />
-      <main className={className}>
-        <TypographyContainer visited={isVisited} />
-        <LogoModel visited={isVisited} />
-      </main>
-    </Layout>
+    <>
+      <SEO locationPath={router.asPath} />
+      <TypographyContainer visited={visited} />
+      <DynamicComponentLogoModel visited={visited} />
+    </>
   )
 }
 
-export default styled(TopPageComponent)`
-  ${PagesStyle}
-`
+export default PrimaryPage

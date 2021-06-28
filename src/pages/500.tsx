@@ -1,5 +1,5 @@
 /*
-  404 Page.
+  500 Page.
 */
 
 import { GetStaticProps } from 'next'
@@ -11,19 +11,19 @@ import { ErrorPageSecondaryHeading } from '@/components/Presentations/ErrorPageS
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
   props: {
     chooseLayout: 'errorLayout',
-    pages: '404'
+    pages: '500'
   }
 })
 
-const Custom404: React.VFC = (): JSX.Element => {
+const Custom500: React.VFC = (): JSX.Element => {
   const router = useRouter()
 
   return (
     <>
-      <SEO title="404 Page" description="This is 404 Page" locationPath={router.asPath} />
-      <ErrorPageSecondaryHeading letter="404 - Page Not Found" translation={true} />
+      <SEO title="500 Page" description="This is 500 Page" locationPath={router.asPath} />
+      <ErrorPageSecondaryHeading letter="500 - Server Side Error Occurred" translation={true} />
     </>
   )
 }
 
-export default Custom404
+export default Custom500
