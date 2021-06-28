@@ -1,18 +1,18 @@
-name: CI
+name: CI for Preview
 on:
   pull_request:
     types: synchronize
-    branches: develop
+    branches: main
 
 env:
-  LAUNCH_ESLINT: off # Launch ESLint. [ on, off ]
-  LAUNCH_STYLELINT: off # Launch stylelint. [ on, off ]
-  LAUNCH_JEST: off # Launch Jest. [ on, off ]
-  LAUNCH_BUILD: off # Launch Build. [ on, off ]
+  LAUNCH_ESLINT: on # Launch ESLint. [ on, off ]
+  LAUNCH_STYLELINT: on # Launch stylelint. [ on, off ]
+  LAUNCH_JEST: on # Launch Jest. [ on, off ]
+  LAUNCH_BUILD: on # Launch Build. [ on, off ]
 
 jobs:
   eslint-and-stylelint-and-jest:
-    name: ESLint & stylelint & Jest
+    name: ESLint & stylelint & jest for Preview
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -81,7 +81,7 @@ jobs:
         run: yarn jest
 
   build-test:
-    name: Build Test
+    name: Build Test for Preview
     needs: eslint-and-stylelint-and-jest
     runs-on: ubuntu-latest
     steps:
@@ -92,8 +92,7 @@ jobs:
         with:
           node-version: 14.x
       - name: Set Env
-        run: |
-          echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
+        run: echo "LAUNCH_BUILD=${LAUNCH_BUILD}" >> $GITHUB_ENV
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"

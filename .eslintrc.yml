@@ -19,6 +19,8 @@ plugins:
   - jest
   - react
   - react-hooks
+  - testing-library
+  - jest-dom
 settings:
   react:
     version: 'detect'
@@ -36,10 +38,14 @@ settings:
 extends:
   - 'eslint:recommended'
   - 'plugin:@typescript-eslint/recommended'
-  - 'plugin:react/recommended'
+  - 'plugin:testing-library/react'
+  - 'plugin:jest-dom/recommended'
   - 'prettier'
+  # eslint-config-next config see. -> https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/index.js
+  - 'next'
 rules:
   indent: off
+  '@next/next/no-img-element': off # This rule is not used when using next export.
   '@typescript-eslint/no-non-null-assertion': off
   '@typescript-eslint/naming-convention': off
   '@typescript-eslint/no-namespace': off
@@ -50,6 +56,9 @@ rules:
   '@typescript-eslint/no-unused-vars':
     - error
     - varsIgnorePattern: '^AddIgnoreName'
+  '@typescript-eslint/no-implicit-any-catch':
+    - error
+    - allowExplicitAny: true
   'max-classes-per-file':
     - error
     - 2
@@ -69,9 +78,11 @@ rules:
   'spaced-comment':
     - error
     - always
+    - markers:
+        - '/'
+  'react/react-in-jsx-scope': off
   'react/prop-types': off
   'react-hooks/rules-of-hooks': error
   'react-hooks/exhaustive-deps': warn
-  'react/jsx-uses-react': off
-  'react/react-in-jsx-scope': off
-  # "@typescript-eslint/ban-ts-comment": error
+  'testing-library/no-node-access': off
+  '@typescript-eslint/ban-ts-comment': off
