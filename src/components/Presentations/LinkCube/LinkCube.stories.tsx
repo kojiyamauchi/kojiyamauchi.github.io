@@ -19,6 +19,10 @@ const mockProps = {
     textureName: 'github',
     linkUrl: 'https://github.com/kojiyamauchi'
   },
+  storybook: {
+    textureName: 'storybook',
+    linkUrl: 'https://kojiyamauchi.github.io/storybook'
+  },
   linkedin: {
     textureName: 'linkedin',
     linkUrl: 'https://www.linkedin.com/in/kojiyyyyamauchi/'
@@ -56,7 +60,7 @@ const mockProps = {
     y: 0.015,
     z: 0.015
   },
-  storybook: true
+  storybookState: true
 }
 
 const StorybookWrapper: React.FC = ({ children }): JSX.Element => (
@@ -78,7 +82,19 @@ export const github = (): JSX.Element => (
       linkUrl={mockProps.github.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
+    />
+  </StorybookWrapper>
+)
+
+export const storybook = (): JSX.Element => (
+  <StorybookWrapper>
+    <LinkCube
+      textureName={mockProps.storybook.textureName}
+      linkUrl={mockProps.storybook.linkUrl}
+      positionValue={mockProps.positionValue}
+      rotate={mockProps.rotate}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
@@ -90,7 +106,7 @@ export const linkedin = (): JSX.Element => (
       linkUrl={mockProps.linkedin.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
@@ -102,7 +118,7 @@ export const behance = (): JSX.Element => (
       linkUrl={mockProps.behance.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
@@ -114,7 +130,7 @@ export const instagram = (): JSX.Element => (
       linkUrl={mockProps.instagram.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
@@ -126,7 +142,7 @@ export const twitter = (): JSX.Element => (
       linkUrl={mockProps.twitter.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
@@ -138,7 +154,7 @@ export const facebook = (): JSX.Element => (
       linkUrl={mockProps.facebook.linkUrl}
       positionValue={mockProps.positionValue}
       rotate={mockProps.rotate}
-      storybook={mockProps.storybook}
+      storybook={mockProps.storybookState}
     />
   </StorybookWrapper>
 )
