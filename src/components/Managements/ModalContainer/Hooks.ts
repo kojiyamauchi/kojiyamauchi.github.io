@@ -37,8 +37,8 @@ export const cubesProps = [
     }
   },
   {
-    textureName: 'linkedin',
-    linkUrl: 'https://www.linkedin.com/in/kojiyyyyamauchi/',
+    textureName: 'storybook',
+    linkUrl: 'https://kojiyamauchi.github.io/storybook',
     positionValue: {
       x: {
         mobileMin: -0.125,
@@ -64,8 +64,8 @@ export const cubesProps = [
     }
   },
   {
-    textureName: 'behance',
-    linkUrl: 'https://www.behance.net/kojiyamauchi',
+    textureName: 'linkedin',
+    linkUrl: 'https://www.linkedin.com/in/kojiyyyyamauchi/',
     positionValue: {
       x: {
         mobileMin: 0.875,
@@ -91,8 +91,8 @@ export const cubesProps = [
     }
   },
   {
-    textureName: 'instagram',
-    linkUrl: 'https://www.instagram.com/kojiyamauchi/',
+    textureName: 'behance',
+    linkUrl: 'https://www.behance.net/kojiyamauchi',
     positionValue: {
       x: {
         mobileMin: -1.125,
@@ -118,8 +118,8 @@ export const cubesProps = [
     }
   },
   {
-    textureName: 'twitter',
-    linkUrl: 'https://twitter.com/KojiyyyYamauchi',
+    textureName: 'instagram',
+    linkUrl: 'https://www.instagram.com/kojiyamauchi/',
     positionValue: {
       x: {
         mobileMin: -0.125,
@@ -145,8 +145,8 @@ export const cubesProps = [
     }
   },
   {
-    textureName: 'facebook',
-    linkUrl: 'https://www.facebook.com/kojiyyyyamauchi',
+    textureName: 'twitter',
+    linkUrl: 'https://twitter.com/KojiyyyYamauchi',
     positionValue: {
       x: {
         mobileMin: 0.875,
