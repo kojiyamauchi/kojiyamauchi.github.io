@@ -12,6 +12,7 @@ sh: "<%= chooseOutPutDir === 'Layouts' ? null : !useHooks ? null : chooseOutPutD
 */
 
 import { use<%= h.changeCase.pascal(addHooksFnName) %> } from './Hooks'
+import '@testing-library/jest-dom/extend-expect'
 import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})
