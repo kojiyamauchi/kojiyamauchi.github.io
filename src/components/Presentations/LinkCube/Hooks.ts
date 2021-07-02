@@ -42,15 +42,21 @@ export const useLinkCube = (textureName: string, positionValue: Props['positionV
   })
 
   useEffect(() => {
-    window.addEventListener('resize', () => setPositionX(generatePosition(positionValue.x.mobile, positionValue.x.tablet, positionValue.x.deskTop)))
+    const fnPositionX = (): void => setPositionX(generatePosition(positionValue.x.mobile, positionValue.x.tablet, positionValue.x.deskTop))
+    window.addEventListener('resize', fnPositionX)
+    return (): void => window.removeEventListener('resize', fnPositionX)
   }, [positionValue.x.deskTop, positionValue.x.mobile, positionValue.x.tablet, positionX])
 
   useEffect(() => {
-    window.addEventListener('resize', () => setPositionY(generatePosition(positionValue.y.mobile, positionValue.y.tablet, positionValue.y.deskTop)))
+    const fnPositionY = (): void => setPositionY(generatePosition(positionValue.y.mobile, positionValue.y.tablet, positionValue.y.deskTop))
+    window.addEventListener('resize', fnPositionY)
+    return (): void => window.removeEventListener('resize', fnPositionY)
   }, [positionValue.y.deskTop, positionValue.y.mobile, positionValue.y.tablet, positionY])
 
   useEffect(() => {
-    window.addEventListener('resize', () => setCubeSize(generateCubeSize(storybook)))
+    const fnCubeSize = (): void => setCubeSize(generateCubeSize(storybook))
+    window.addEventListener('resize', fnCubeSize)
+    return (): void => window.removeEventListener('resize', fnCubeSize)
   }, [cubeSize, storybook])
 
   const memorizePositionX = useMemo(() => positionX, [positionX])

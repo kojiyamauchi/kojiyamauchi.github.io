@@ -4,6 +4,8 @@
 */
 
 import { generatePosition, generateCubeSize } from './Hooks'
+import '@testing-library/jest-dom/extend-expect'
+// import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})
 beforeEach(() => {})
