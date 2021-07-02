@@ -1,8 +1,13 @@
 @use "@/styles/mixins";
 
 .wrapper {
+  display: none;
   width: 100%;
   visibility: visible;
+
+  &[class~=is-display] {
+    display:block;
+  }
 
   &[class~=is-deactive] {
     visibility: hidden;
