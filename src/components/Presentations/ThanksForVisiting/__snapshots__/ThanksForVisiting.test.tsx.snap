@@ -3,7 +3,7 @@
 exports[`Thanks For Visiting Component Unit Test Snap Shot Testing 1`] = `
 <DocumentFragment>
   <div
-    class="wrapper thanks-for-visiting "
+    class="wrapper thanks-for-visiting is-display"
   >
     <svg
       class="svg-graffiti svg-graffiti"
