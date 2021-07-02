@@ -3,7 +3,7 @@
 exports[`Jump To Old Portfolio Component Unit Test Snap Shot Testing 1`] = `
 <DocumentFragment>
   <div
-    class="wrapper jump-to-old-portfolio  is-active"
+    class="wrapper jump-to-old-portfolio is-active is-display"
   >
     <svg
       class="svg-graffiti svg-graffiti"
