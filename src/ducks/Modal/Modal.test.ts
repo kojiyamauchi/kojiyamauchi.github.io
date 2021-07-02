@@ -11,11 +11,11 @@ beforeEach(() => {})
 describe('Modal Store Unit Test', () => {
   it('Modal Open', () => {
     store.dispatch(modalToggle({ isOpen: true }))
-    expect(store.getState().modalStore.isOpen).toBeTruthy
+    expect(store.getState().modalStore.isOpen).toBe(true)
   })
   it('Modal Close', () => {
     store.dispatch(modalToggle({ isOpen: false }))
-    expect(store.getState().modalStore.isOpen).toBeFalsy
+    expect(store.getState().modalStore.isOpen).toBe(false)
   })
 })
 
