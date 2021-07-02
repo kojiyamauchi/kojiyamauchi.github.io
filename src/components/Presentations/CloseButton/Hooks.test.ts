@@ -4,6 +4,8 @@
 */
 
 import { sleep, toggleCloseButton, addClasses } from './Hooks'
+import '@testing-library/jest-dom/extend-expect'
+// import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => jest.useFakeTimers())
 beforeEach(() => {})
@@ -25,20 +27,19 @@ describe('Close Button Private Hooks Each Function Unit Test', () => {
     const mockStateFirst = true
     const mockStateSecond = false
     toggleCloseButton(mockStateFirst, button)
-    expect(button.classList.contains('is-active')).toBeTruthy
+    expect(button).toHaveClass('is-active')
     toggleCloseButton(mockStateSecond, button)
-    expect(button.classList.contains('is-active')).toBeFalsy
+    expect(button).not.toHaveClass('is-active')
   })
-  it('addClasses Fn', () => {
+  it('addClasses Fn', async () => {
     const parent = document.createElement('div')
     const blockNumber = 9
     const pendingTime = 75
     Array.from({ length: blockNumber }, () => parent.appendChild(document.createElement('span')))
     addClasses(parent.children)
     jest.advanceTimersByTime(pendingTime * blockNumber)
-    Array.from(parent.children, (selector) => {
-      expect(selector.classList.contains('is-active')).toBeTruthy
-    })
+    await Promise.resolve()
+    Array.from(parent.children, (selector) => expect(selector).toHaveClass('is-active'))
   })
 })
 
