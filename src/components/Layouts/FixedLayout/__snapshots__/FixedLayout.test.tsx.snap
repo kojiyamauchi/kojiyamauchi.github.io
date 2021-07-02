@@ -15,7 +15,7 @@ exports[`Fixed Layout Component Unit Test Snap Shot Testing 1`] = `
         class="graffiti-wrapper graffiti-wrapper"
       >
         <div
-          class="wrapper thanks-for-visiting "
+          class="wrapper thanks-for-visiting is-display"
         >
           <svg
             class="svg-graffiti svg-graffiti"
@@ -236,7 +236,7 @@ exports[`Fixed Layout Component Unit Test Snap Shot Testing 1`] = `
           </button>
         </div>
         <div
-          class="wrapper jump-to-old-portfolio  "
+          class="wrapper jump-to-old-portfolio is-display"
         >
           <svg
             class="svg-graffiti svg-graffiti"

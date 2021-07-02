@@ -13,14 +13,14 @@
     min-height: -webkit-fill-available;
   }
 
-  > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]) {
+  > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]):not([class~=loading-introduction]) {
     filter: blur(0);
     transition: filter 0.5s ease-in;
     will-change: filter;
   }
 
   &[class~=is-blur] {
-    > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]) {
+    > *:not([class~=button-container]):not([class~=modal-container]):not([class~=about-me-container]):not([class~=loading-introduction]) {
       filter: blur(5px);
       transition: filter 0.5s ease-out 0.5s;
     }

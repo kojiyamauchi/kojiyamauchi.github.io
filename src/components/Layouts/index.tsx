@@ -9,18 +9,20 @@ import { PageProps } from '@/types/type'
 type Props = {
   pageProps: PageProps
   currentLocation?: string
+  loading: React.ReactNode
 }
 
 const switchComponent = (
   chooseLayout: PageProps['chooseLayout'],
   pages: PageProps['pages'],
   children: React.ReactNode,
-  currentLocation?: string
+  currentLocation?: string,
+  loading?: React.ReactNode
 ): JSX.Element => {
   switch (chooseLayout) {
     case 'fixedLayout':
       return (
-        <FixedLayout pages={pages} currentLocation={currentLocation}>
+        <FixedLayout pages={pages} currentLocation={currentLocation} loading={loading}>
           {children}
         </FixedLayout>
       )
@@ -29,6 +31,6 @@ const switchComponent = (
   }
 }
 
-export const Layout: React.FC<Props> = ({ pageProps, children, currentLocation }): JSX.Element => {
-  return switchComponent(pageProps.chooseLayout, pageProps.pages, children, currentLocation)
+export const Layout: React.FC<Props> = ({ pageProps, children, currentLocation, loading }): JSX.Element => {
+  return switchComponent(pageProps.chooseLayout, pageProps.pages, children, currentLocation, loading)
 }
