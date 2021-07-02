@@ -3,7 +3,9 @@
 */
 
 import { TypographyContainer } from './Component'
-import { Typography } from '@/components/Presentations/Typography'
+import { Provider } from 'react-redux'
+import { store } from '@/ducks'
+import { firstVisitToggle } from '@/ducks/FirstVisit'
 import { render, act /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 // import userEvent from '@testing-library/user-event'
@@ -16,9 +18,13 @@ class SVGPathElement extends HTMLElement {}
 
 describe('Typography Container Component Unit Test', () => {
   it('Snap Shot Testing', () => {
+    store.dispatch(firstVisitToggle({ isVisited: true }))
     act(() => {
-      render(<Typography visited={true} />)
-      const { asFragment } = render(<TypographyContainer visited={true} />)
+      const { asFragment } = render(
+        <Provider store={store}>
+          <TypographyContainer />
+        </Provider>
+      )
       expect(asFragment()).toMatchSnapshot()
     })
   })

@@ -3,6 +3,8 @@
 */
 
 import { TypographyContainer } from './Component'
+import { Provider } from 'react-redux'
+import { store } from '@/ducks'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {
@@ -12,4 +14,8 @@ const storiesInfo = {
 
 export default storiesInfo
 
-export const Default = (): JSX.Element => <TypographyContainer visited={false} />
+export const Default = (): JSX.Element => (
+  <Provider store={store}>
+    <TypographyContainer />
+  </Provider>
+)
