@@ -19,6 +19,7 @@ import { Provider } from 'react-redux'
 import { store } from '@/ducks'
 import { PageProps } from '@/types/type'
 import { Layout } from '@/components/Layouts'
+import { LoadingIntroduction } from '@/components/Presentations/LoadingIntroduction'
 import '@/styles/default.scss'
 
 type AppProps = {
@@ -30,7 +31,7 @@ type AppProps = {
 const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   return (
     <Provider store={store}>
-      <Layout pageProps={pageProps} currentLocation={router.asPath}>
+      <Layout pageProps={pageProps} currentLocation={router.asPath} loading={<LoadingIntroduction />}>
         <Component {...pageProps} />
       </Layout>
     </Provider>
