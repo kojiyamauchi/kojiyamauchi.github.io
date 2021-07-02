@@ -3,6 +3,8 @@
 */
 
 import { useRef, useEffect, RefObject } from 'react'
+import { useSelector, shallowEqual } from 'react-redux'
+import { StoreTypes } from '@/types/type'
 import {
   WebGLRenderer,
   TextureLoader,
@@ -445,8 +447,9 @@ export type hooksReturnType = {
   myComponent: RefObject<HTMLDivElement>
 }
 
-export const useLogoModel = (visited: boolean): hooksReturnType => {
+export const useLogoModel = (): hooksReturnType => {
   const myComponent = useRef<HTMLDivElement>(null)
+  const visited = useSelector<StoreTypes, boolean>((state) => state.firstVisitStore.isVisited, shallowEqual)
 
   useEffect(() => {
     const { renderer, setModel, removeModel, responsive } = renderCore()

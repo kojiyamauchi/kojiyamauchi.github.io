@@ -5,12 +5,8 @@
 import { useLogoModel } from './Hooks'
 import styles from './style.module.scss'
 
-export type Props = {
-  visited: boolean
-}
-
-export const LogoModel: React.VFC<Props> = ({ visited }): JSX.Element => {
-  const { myComponent } = useLogoModel(visited)
+export const LogoModel: React.VFC = (): JSX.Element => {
+  const { myComponent } = useLogoModel()
 
   return <div className={`${styles.wrapper} logo-model`} ref={myComponent}></div>
 }

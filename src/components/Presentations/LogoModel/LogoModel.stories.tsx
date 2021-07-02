@@ -3,6 +3,8 @@
 */
 
 import { LogoModel } from './Component'
+import { Provider } from 'react-redux'
+import { store } from '@/ducks'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {
@@ -13,7 +15,9 @@ const storiesInfo = {
 export default storiesInfo
 
 export const Default = (): JSX.Element => (
-  <div style={{ width: '100%', height: '100vh' }}>
-    <LogoModel visited={false} />
-  </div>
+  <Provider store={store}>
+    <div style={{ width: '100%', height: '100vh' }}>
+      <LogoModel />
+    </div>
+  </Provider>
 )
