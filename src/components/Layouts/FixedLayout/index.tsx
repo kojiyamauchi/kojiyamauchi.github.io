@@ -13,9 +13,10 @@ import styles from './style.module.scss'
 type Props = {
   pages: PageProps['pages']
   currentLocation?: string
+  loading?: React.ReactNode
 }
 
-export const FixedLayout: React.FC<Props> = ({ pages, children, currentLocation }): JSX.Element => {
+export const FixedLayout: React.FC<Props> = ({ pages, children, currentLocation, loading }): JSX.Element => {
   const childrenWithProps = Children.map(children, (child) => {
     return isValidElement(child) && cloneElement(child, { location: currentLocation })
   })
@@ -26,6 +27,7 @@ export const FixedLayout: React.FC<Props> = ({ pages, children, currentLocation 
       <ModalContainer />
       <ButtonContainer />
       <AboutMeContainer />
+      {loading}
       <FooterContainer />
     </div>
   )

@@ -2,6 +2,7 @@
   Thanks For Visiting Component.
 */
 
+import { useRef, useEffect } from 'react'
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [
@@ -64,8 +65,12 @@ type Props = {
 }
 
 export const ThanksForVisiting: React.VFC<Props> = ({ openAboutMe, copyrightHover }): JSX.Element => {
+  const myComponent = useRef<HTMLDivElement>(null)
+
+  useEffect(() => myComponent.current!.classList.add('is-display'))
+
   return (
-    <div className={`${styles.wrapper} thanks-for-visiting ${copyrightHover ? 'is-deactive' : ''}`}>
+    <div ref={myComponent} className={`${styles.wrapper} thanks-for-visiting ${copyrightHover ? 'is-deactive' : ''}`}>
       <svg
         className={`${styles['svg-graffiti']} svg-graffiti`}
         version="1.1"

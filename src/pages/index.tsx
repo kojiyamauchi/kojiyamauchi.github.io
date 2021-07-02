@@ -15,8 +15,8 @@ import { PageProps } from '@/types/type'
 import { SEO } from '@/components/Seo'
 import { TypographyContainer } from '@/components/Managements/TypographyContainer'
 import { DynamicComponentLogoModel } from '@/components/Presentations/LogoModel'
-
-let visited = false
+import { useDispatch } from 'react-redux'
+import { firstVisitToggle } from '@/ducks/FirstVisit'
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
   props: {
@@ -27,14 +27,17 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: PagePro
 
 const PrimaryPage: React.VFC = (): JSX.Element => {
   const router = useRouter()
+  const dispatch = useDispatch()
 
-  useEffect(() => void (visited = true))
+  useEffect(() => {
+    return (): void => void dispatch(firstVisitToggle({ isVisited: true }))
+  })
 
   return (
     <>
       <SEO locationPath={router.asPath} />
-      <TypographyContainer visited={visited} />
-      <DynamicComponentLogoModel visited={visited} />
+      <TypographyContainer />
+      <DynamicComponentLogoModel />
     </>
   )
 }

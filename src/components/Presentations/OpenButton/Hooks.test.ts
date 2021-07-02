@@ -4,6 +4,8 @@
 */
 
 import { sleep, toggleOpenButton, showLetter, hideLetter, randomClass } from './Hooks'
+import '@testing-library/jest-dom/extend-expect'
+// import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => jest.useFakeTimers())
 beforeEach(() => {})
@@ -24,35 +26,34 @@ describe('Open Button Private Hooks Each Function Unit Test', () => {
     const button = document.createElement('button')
     const mockStateFirst = false
     toggleOpenButton(mockStateFirst, button)
-    expect(button.classList.contains('is-active')).toBeTruthy
+    expect(button).toHaveClass('is-active')
     const mockStateSecond = true
     toggleOpenButton(mockStateSecond, button)
-    expect(button.classList.contains('is-active')).toBeFalsy
+    expect(button).not.toHaveClass('is-active')
   })
-  it('showLetter Fn', () => {
+  it('showLetter Fn', async () => {
     const parent = document.createElement('div')
     const length = 5
     const pendingTime = 75
     Array.from({ length: length }, () => parent.appendChild(document.createElement('span')))
     showLetter(parent.children)
     jest.advanceTimersByTime(pendingTime * length)
-    Array.from(parent.children, (selector) => {
-      expect(selector.classList.contains('is-active')).toBeTruthy
-    })
+    await Promise.resolve()
+    Array.from(parent.children, (selector) => expect(selector).toHaveClass('is-active'))
   })
-  it('hideLetter Fn', () => {
+  it('hideLetter Fn', async () => {
     const parent = document.createElement('div')
     const letterLength = 4
     const pendingTime = 75
     Array.from({ length: letterLength }, () => parent.appendChild(document.createElement('span')))
     hideLetter(parent.children)
     jest.advanceTimersByTime(pendingTime * letterLength)
-    Array.from(parent.children, (selector) => {
-      expect(selector.classList.contains('is-active')).toBeFalsy
-    })
+    await Promise.resolve()
+    Array.from(parent.children, (selector) => expect(selector).not.toHaveClass('is-active'))
   })
   it('randomClass Fn', () => {
-    expect(randomClass() === 'is-active01' || randomClass() === 'is-active02' || randomClass() === 'is-active03').toBeTruthy
+    const result = randomClass()
+    expect(result === 'is-active01' || result === 'is-active02' || result === 'is-active03').toBe(true)
   })
 })
 

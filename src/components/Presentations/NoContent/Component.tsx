@@ -2,6 +2,7 @@
   No Content Component.
 */
 
+import { useRef, useEffect } from 'react'
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [
@@ -53,8 +54,13 @@ type Props = {
 }
 
 export const NoContent: React.VFC<Props> = ({ copyrightHover }): JSX.Element => {
+  const myComponent = useRef<SVGSVGElement>(null)
+
+  useEffect(() => myComponent.current!.classList.add('is-display'))
+
   return (
     <svg
+      ref={myComponent}
       className={`${styles.wrapper} svg-graffiti ${copyrightHover ? 'is-deactive' : ''}`}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

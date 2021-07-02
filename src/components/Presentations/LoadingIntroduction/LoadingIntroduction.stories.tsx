@@ -1,23 +1,21 @@
 /*
-  Logo Model Component Storybook.
+  Loading Introduction Component Storybook.
 */
 
-import { LogoModel } from './Component'
+import { LoadingIntroduction } from './Component'
 import { Provider } from 'react-redux'
 import { store } from '@/ducks'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {
-  title: 'Logo Model Component',
-  component: LogoModel
+  title: 'Loading Introduction Component',
+  component: LoadingIntroduction
 }
 
 export default storiesInfo
 
 export const Default = (): JSX.Element => (
   <Provider store={store}>
-    <div style={{ width: '100%', height: '100vh' }}>
-      <LogoModel />
-    </div>
+    <LoadingIntroduction storybook={true} />
   </Provider>
 )

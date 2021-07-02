@@ -3,15 +3,19 @@
 */
 
 import { useState, useEffect, useRef, RefObject } from 'react'
+import { useSelector, shallowEqual } from 'react-redux'
+import { StoreTypes } from '@/types/type'
 import { gsap } from 'gsap'
 
 export type hooksReturnType = {
   myComponent: RefObject<HTMLDivElement>
+  visited: boolean
 }
 
-export const useTypography = (visited: boolean): hooksReturnType => {
+export const useTypography = (): hooksReturnType => {
   const [countUp, setCountUp] = useState(0)
   const myComponent = useRef<HTMLDivElement>(null)
+  const visited = useSelector<StoreTypes, boolean>((state) => state.firstVisitStore.isVisited, shallowEqual)
 
   useEffect(() => {
     const strokeLengthArr = Array.from(myComponent.current!.firstElementChild!.querySelectorAll('.draw-typography'), (selector): number | undefined => {
@@ -47,7 +51,7 @@ export const useTypography = (visited: boolean): hooksReturnType => {
       countUp === 0
         ? window.innerWidth <= 767
           ? 0
-          : 1250
+          : 2250
         : countUp === 1
         ? 300
         : countUp > 1 && countUp < 24
@@ -64,5 +68,5 @@ export const useTypography = (visited: boolean): hooksReturnType => {
     return (): void => clearTimeout(timeID)
   }, [countUp, visited])
 
-  return { myComponent }
+  return { myComponent, visited }
 }

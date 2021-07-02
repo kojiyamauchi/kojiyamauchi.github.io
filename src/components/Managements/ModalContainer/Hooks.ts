@@ -208,12 +208,8 @@ export const generatePositionValue = cubesProps.map((info) => {
 })
 
 export const switchGraffiti = (myComponentCurrent: HTMLDivElement, setCopyrightHover: Dispatch<SetStateAction<boolean>>): void => {
-  myComponentCurrent.querySelector('.copyright')?.addEventListener('mouseenter', () => {
-    window.innerWidth > 767 && setCopyrightHover(true)
-  })
-  myComponentCurrent.querySelector('.copyright')?.addEventListener('mouseleave', () => {
-    window.innerWidth > 767 && setCopyrightHover(false)
-  })
+  myComponentCurrent.querySelector('.copyright')?.addEventListener('mouseenter', () => window.innerWidth > 767 && setCopyrightHover(true))
+  myComponentCurrent.querySelector('.copyright')?.addEventListener('mouseleave', () => window.innerWidth > 767 && setCopyrightHover(false))
 }
 
 export const switchModal = (modalState: boolean, myComponentCurrent: HTMLDivElement): void => {

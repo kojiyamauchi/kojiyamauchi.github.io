@@ -3,7 +3,7 @@
 exports[`No Content Component Unit Test Snap Shot Testing 1`] = `
 <DocumentFragment>
   <svg
-    class="wrapper svg-graffiti "
+    class="wrapper svg-graffiti is-display"
     enable-background="new 0 0 760 650;"
     version="1.1"
     viewBox="0 0 760 650"

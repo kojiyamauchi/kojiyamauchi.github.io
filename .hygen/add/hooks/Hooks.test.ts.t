@@ -10,7 +10,8 @@ sh: prettier --write 'src/hooks/<%= Name %>/<%= Name %>.test.ts'
 */
 
 import { use<%= Name %> } from './'
-import { renderHook /* , act*/ } from '@testing-library/react-hooks/dom'
+import '@testing-library/jest-dom/extend-expect'
+import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})
 beforeEach(() => {})

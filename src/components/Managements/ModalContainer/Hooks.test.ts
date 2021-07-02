@@ -4,6 +4,8 @@
 */
 
 import { generateDeviceValue, generatePositionValue, cubesProps, switchGraffiti, switchModal } from './Hooks'
+import '@testing-library/jest-dom/extend-expect'
+// import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})
 beforeEach(() => {})
@@ -26,19 +28,19 @@ describe('Modal Private Hooks Each Function Unit Test', () => {
       mockValue.deskTopMin,
       mockValue.deskTopMax
     )
-    expect(mobile > 1 || mobile < 2).toBeTruthy
-    expect(tablet > 3 || tablet < 4).toBeTruthy
-    expect(deskTop > 5 || deskTop < 6).toBeTruthy
+    expect(mobile > 1 || mobile < 2).toBe(true)
+    expect(tablet > 3 || tablet < 4).toBe(true)
+    expect(deskTop > 5 || deskTop < 6).toBe(true)
   })
   it('generatePositionValue Fn', () => {
     const realValue = cubesProps[0].positionValue
     const { x, y } = generatePositionValue[0]
-    expect(x.mobile > realValue.x.mobileMin || x.mobile < realValue.x.mobileMax).toBeTruthy
-    expect(x.tablet > realValue.x.tabletMin || x.tablet < realValue.x.tabletMax).toBeTruthy
-    expect(x.deskTop > realValue.x.deskTopMin || x.deskTop < realValue.x.deskTopMax).toBeTruthy
-    expect(y.mobile > realValue.y.mobileMin || y.mobile < realValue.y.mobileMax).toBeTruthy
-    expect(y.tablet > realValue.y.tabletMin || y.tablet < realValue.y.tabletMax).toBeTruthy
-    expect(y.deskTop > realValue.y.deskTopMin || y.deskTop < realValue.y.deskTopMax).toBeTruthy
+    expect(x.mobile > realValue.x.mobileMin || x.mobile < realValue.x.mobileMax).toBe(true)
+    expect(x.tablet > realValue.x.tabletMin || x.tablet < realValue.x.tabletMax).toBe(true)
+    expect(x.deskTop > realValue.x.deskTopMin || x.deskTop < realValue.x.deskTopMax).toBe(true)
+    expect(y.mobile > realValue.y.mobileMin || y.mobile < realValue.y.mobileMax).toBe(true)
+    expect(y.tablet > realValue.y.tabletMin || y.tablet < realValue.y.tabletMax).toBe(true)
+    expect(y.deskTop > realValue.y.deskTopMin || y.deskTop < realValue.y.deskTopMax).toBe(true)
   })
   it('switchGraffiti', () => {
     const wrapper = document.createElement('div')
@@ -66,9 +68,9 @@ describe('Modal Private Hooks Each Function Unit Test', () => {
   it('switchModal', () => {
     const dom = document.createElement('div')
     switchModal(true, dom)
-    expect(dom.classList.contains('is-active')).toBeTruthy
+    expect(dom).toHaveClass('is-active')
     switchModal(false, dom)
-    expect(dom.classList.contains('is-active')).toBeFalsy
+    expect(dom).not.toHaveClass('is-active')
   })
 })
 

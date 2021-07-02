@@ -15,7 +15,12 @@ export type AboutMeTypes = {
   isOpen: boolean
 }
 
+export type FirstVisitTypes = {
+  isVisited: boolean
+}
+
 export type StoreTypes = {
   modalStore: ModalTypes
   aboutMeStore: AboutMeTypes
+  firstVisitStore: FirstVisitTypes
 }

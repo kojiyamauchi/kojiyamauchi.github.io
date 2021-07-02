@@ -2,6 +2,7 @@
   Jump To Old Portfolio Component.
 */
 
+import { useRef, useEffect } from 'react'
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [
@@ -63,8 +64,12 @@ type Props = {
 }
 
 export const JumpToOldPortfolio: React.VFC<Props> = ({ openAboutMe, copyrightHover }): JSX.Element => {
+  const myComponent = useRef<HTMLDivElement>(null)
+
+  useEffect(() => myComponent.current!.classList.add('is-display'))
+
   return (
-    <div className={`${styles.wrapper} jump-to-old-portfolio  ${copyrightHover ? 'is-active' : ''}`}>
+    <div ref={myComponent} className={`${styles.wrapper} jump-to-old-portfolio  ${copyrightHover ? 'is-active' : ''}`}>
       <svg
         className={`${styles['svg-graffiti']} svg-graffiti`}
         version="1.1"
