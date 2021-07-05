@@ -1,8 +1,8 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
-const StylelintPlugin = require('stylelint-webpack-plugin')
+// TODO: const ESLintPlugin = require('eslint-webpack-plugin')
+// TODO: const StylelintPlugin = require('stylelint-webpack-plugin')
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
@@ -52,8 +52,11 @@ module.exports = {
             }
           }
         }),
-        new ESLintPlugin({ files: [path.resolve(__dirname, 'src/**/*.{ts,tsx,js,jsx}')], failOnWarning: true }),
-        new StylelintPlugin({ files: 'src/**/*.(s(c|a)ss|css)', fix: true }),
+        // Currently, ESlint & Stylelint alerts are some not displayed in the terminal on Next.js. (I want to see errors in real time.)
+        // See -> https://github.com/vercel/next.js/issues/9904
+        // See -> https://stackoverflow.com/questions/59558063/next-js-eslint-is-not-linting-any-pages-in-dev-mode-aside-from-pages-app-js
+        // TODO: new ESLintPlugin({ files: [path.resolve(__dirname, 'src/**/**/*.{ts,tsx,js,jsx}')], failOnWarning: true }),
+        // TODO: new StylelintPlugin({ files: 'src/**/**/*.(s(c|a)ss|css)', fix: true }),
         new ForkTsCheckerNotifierWebpackPlugin({ title: 'TypeScript | Next.js' }),
         new WebpackNotifierPlugin({ title: 'ESLint or Webpack Build | Next.js ' }),
         new ImageminWebpWebpackPlugin({
