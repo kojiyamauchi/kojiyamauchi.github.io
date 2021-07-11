@@ -260,6 +260,11 @@ exports[`Typography Container Component Unit Test Snap Shot Testing 1`] = `
           />
         </g>
       </svg>
+      <h1
+        class="primary-heading primary-heading"
+      >
+        Koji Yamauchi | ヤマウチ コウジ | 山内 康次 | Tokyo | Japan | Freelance Web Developer | Web Frontend | TypeScript | JavaScript | React | Next.js | Webpack | Gulp | Node.js | Design | Photoshop | Illustrator
+      </h1>
     </div>
     <h2
       class="wrapper sub-letter is-visited"

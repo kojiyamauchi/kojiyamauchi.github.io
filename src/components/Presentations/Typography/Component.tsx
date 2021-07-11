@@ -96,6 +96,10 @@ export const Typography: React.VFC<Props> = ({ visited }): JSX.Element => {
           ))}
         </g>
       </svg>
+      <h1 className={`${styles['primary-heading']} primary-heading`}>
+        Koji Yamauchi | ヤマウチ コウジ | 山内 康次 | Tokyo | Japan | Freelance Web Developer | Web Frontend | TypeScript | JavaScript | React | Next.js |
+        Webpack | Gulp | Node.js | Design | Photoshop | Illustrator
+      </h1>
     </div>
   )
 }
