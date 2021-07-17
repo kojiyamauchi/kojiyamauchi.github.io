@@ -19,7 +19,6 @@ export const SEO: React.VFC<Props> = (props): JSX.Element => {
   const setSeo = {
     title: props.title ? `${props.title} | ${baseSeo.title}` : baseSeo.title,
     description: props.description ? `${baseSeo.description} and ${props.description}` : baseSeo.description,
-    keywords: baseSeo.keywords,
     location: props.locationPath ? `${baseSeo.location}${props.locationPath}` : baseSeo.location,
     ogpSiteName: props.ogpSiteName || baseSeo.ogpSiteName,
     ogpTitle: props.ogpTitle ? `${props.ogpTitle} | ${baseSeo.ogpTitle}` : baseSeo.ogpTitle,
@@ -36,7 +35,6 @@ export const SEO: React.VFC<Props> = (props): JSX.Element => {
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" key="X-UA-Compatible" />
       <meta name="viewport" content="width=device-width, initial-scale=1" key="viewport" />
       <meta name="description" content={setSeo.description} key="description" />
-      <meta name="keywords" content={setSeo.keywords} key="keywords" />
       <meta property="og:type" content="website" key="ogp-type" />
       <meta property="og:url" content={setSeo.location} key="ogp-url" />
       <meta property="og:site_name" content={setSeo.ogpSiteName} key="ogp-site-name" />
