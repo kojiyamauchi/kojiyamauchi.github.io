@@ -33,7 +33,7 @@ exports[`About Me Container Component Unit Test Snap Shot Testing 1`] = `
         <br />
         In the front-end area, we can handle everything from styling, such as UI implementation and design implementation, to interaction implementation, animation implementation, and API communication, so please feel free to contact us.
         <br />
-        My skills, TypeScript / JavaScript / React / Next.js / Webpack / Gulp / Node.js / GitHub / Sass / CSS / HTML / VSCode / Figma(a little) / Sketch(a little) / Photoshop / Illustrator.
+        My skills, TypeScript / JavaScript / React / Next.js / Node.js / Webpack / Gulp / GitHub / Sass / CSS / HTML / VSCode / Figma(a little) / Sketch(a little) / Photoshop / Illustrator.
         <br />
         Currently, past projects is private.
         <br />
@@ -57,7 +57,7 @@ exports[`About Me Container Component Unit Test Snap Shot Testing 1`] = `
         <br />
         フロントエンド領域においては、UI実装・デザイン実装等のスタイリング周りから、インタラクション実装・アニメーション実装・API通信まで承る事が可能ですので、お気軽にご連絡下さい。
         <br />
-        使用言語・開発環境等は、TypeScript・JavaScript・React・Next.js・Webpack・Gulp・Node.js・GitHub・Sass・CSS・HTML・VSCode・Figma(少々)・Sketch(少々)・Photoshop・Illustratorになります。
+        使用言語・開発環境等は、TypeScript・JavaScript・React・Next.js・Node.js・Webpack・Gulp・GitHub・Sass・CSS・HTML・VSCode・Figma(少々)・Sketch(少々)・Photoshop・Illustratorになります。
         <br />
         現在、制作実績は非公開になりますので、下記よりお問い合わせ下さい。
         <br />
