@@ -40,3 +40,4 @@ yarn.lock
 src/pages/_error.tsx
 delivery/*
 !delivery/.gitkeep
+tsconfig.tsbuildinfo
