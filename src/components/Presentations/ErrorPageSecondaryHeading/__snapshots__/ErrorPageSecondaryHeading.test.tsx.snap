@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Secondary Heading Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <h2
+    class="secondary-heading error-page-secondary-heading page-heading "
+  >
+    Snap Shot Test.😵
+  </h2>
+</DocumentFragment>
+`;

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copyright Component Unit Test Snap Shot Testing for About Me 1`] = `
+<DocumentFragment>
+  <a
+    class="wrapper undefined is-about-me"
+    href="http://kojiyamauchi.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+    © 2021 All The Small Things, All Rights Reserved.
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Copyright Component Unit Test Snap Shot Testing for Error 1`] = `
+<DocumentFragment>
+  <a
+    class="wrapper undefined is-error"
+    href="http://kojiyamauchi.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+    © 2021 All The Small Things, All Rights Reserved.
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Copyright Component Unit Test Snap Shot Testing for Footer 1`] = `
+<DocumentFragment>
+  <a
+    class="wrapper undefined is-footer"
+    href="http://kojiyamauchi.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+    © 2021 All The Small Things, All Rights Reserved.
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Copyright Component Unit Test Snap Shot Testing for Modal 1`] = `
+<DocumentFragment>
+  <a
+    class="wrapper undefined is-modal"
+    href="http://kojiyamauchi.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+    © 2021 All The Small Things, All Rights Reserved.
+  </a>
+</DocumentFragment>
+`;

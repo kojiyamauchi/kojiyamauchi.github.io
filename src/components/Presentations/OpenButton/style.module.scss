@@ -1,0 +1,101 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50px;
+  margin: auto;
+  font-family: inherit;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+  transform: translateY(136px);
+  will-change: visibility, transform;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[class~=is-active] {
+    visibility: visible;
+    transition: all 0.5s ease-out 0.5s;
+    transform: translateY(0);
+  }
+}
+
+.open-letters-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.open-letter {
+  display: inline-block;
+  font-size: 2.2em;
+  font-weight: bold;
+  line-height: 1;
+  color: #f5a100;
+  text-shadow: 2px 2px 1px #fff;
+  transition: transform 0.25s ease-in;
+  transform: translateY(5px) scale(0);
+  will-change: transform;
+
+  &[class~=is-active] {
+    transition: transform 0.25s ease-out;
+    transform: translateY(-5px) scale(1);
+  }
+}
+
+.button-block {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 0 2.5px 0;
+  background-color: #f5a100;
+  box-shadow: 2px 2px 1px #fff;
+  will-change: transform;
+
+  &:nth-last-child(-n + 3) {
+    margin: 0;
+  }
+
+  &[class~=is-active01] {
+    animation: block-scale 0.75s linear 0s infinite;
+  }
+
+  &[class~=is-active02] {
+    animation: block-scale 0.75s linear 0.25s infinite;
+  }
+
+  &[class~=is-active03] {
+    animation: block-scale 0.75s linear 0.5s infinite;
+  }
+}
+
+@keyframes block-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.125);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

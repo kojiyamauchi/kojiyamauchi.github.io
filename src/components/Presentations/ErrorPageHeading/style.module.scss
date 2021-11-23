@@ -1,0 +1,12 @@
+@use "@/styles/mixins";
+
+.primary-heading {
+  width: 100%;
+  margin: 0 0 40px 0;
+  font-size: 3em;
+  font-weight: lighter;
+  text-align: center;
+  @include mixins.aboveLargeMobile {
+    font-size: 5.6em;
+  }
+}

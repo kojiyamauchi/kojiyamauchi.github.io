@@ -1,0 +1,79 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  will-change: visibility, opacity;
+  @include mixins.aboveLargeMobile {
+    align-items: center;
+  }
+
+  &[class~=is-display] {
+    display: flex;
+  }
+
+  &[class~=is-active] {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-out 0.5s;
+  }
+}
+
+.graffiti-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 300px;
+  transform: translateY(35px);
+  @include mixins.aboveSmallMobile {
+    transform: translateY(70px);
+  }
+  @include mixins.aboveLargeMobile {
+    max-width: 500px;
+    transform: translateY(140px);
+  }
+  @include mixins.aboveTablet {
+    z-index: auto;
+    transform: none;
+  }
+  @include mixins.aboveLaptop {
+    max-width: 625px;
+  }
+  // For Normal iPad Size.(Power Play.😵)
+  @media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    width: 30%;
+    max-width: none;
+    transform: translateY(70px);
+  }
+}
+
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.copyright-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  z-index: 2;
+  margin: auto;
+  text-align: center;
+}
+

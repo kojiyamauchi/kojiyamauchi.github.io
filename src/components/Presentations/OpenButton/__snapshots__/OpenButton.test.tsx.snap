@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Open Button Component Unit Test Snap Shot Testing 1`] = `
+<DocumentFragment>
+  <button
+    class="wrapper open-button is-active"
+  >
+    <span
+      class="open-letters-wrapper open-letters-wrapper"
+    >
+      <span
+        class="open-letter open-letter"
+      >
+        A
+      </span>
+      <span
+        class="open-letter open-letter"
+      >
+        P
+      </span>
+      <span
+        class="open-letter open-letter"
+      >
+        P
+      </span>
+      <span
+        class="open-letter open-letter"
+      >
+        S
+      </span>
+    </span>
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+    <span
+      class="button-block button-block "
+    />
+  </button>
+</DocumentFragment>
+`;

@@ -1,0 +1,44 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  display: none;
+  width: 100%;
+  visibility: visible;
+
+  &[class~=is-display] {
+    display:block;
+  }
+
+  &[class~=is-deactive] {
+    visibility: hidden;
+  }
+}
+
+.path {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 12;
+}
+
+.storybook-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #777;
+}
+
+.storybook-inner {
+  position: relative;
+  width: 50vw;
+  min-width: 280px;
+  max-width: 550px;
+  height: calc(50vw * 0.855277382645804);
+  min-height: calc(280px * 0.855277382645804);
+  max-height: calc(550px * 0.855277382645804);
+}
+

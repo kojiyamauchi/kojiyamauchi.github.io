@@ -1,0 +1,12 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 64px;
+  left: 0;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}

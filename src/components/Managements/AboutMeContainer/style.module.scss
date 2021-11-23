@@ -1,0 +1,46 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  z-index: 3;
+  width: 100vw;
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.8);
+  background-repeat: no-repeat;
+  background-position: bottom 20px right -20px;
+  background-size: 250px;
+  transition: transform 0.5s ease-in;
+  transform: translateX(0);
+  @include mixins.aboveLargeMobile {
+    padding: 50px 20px;
+    background-size: 400px;
+  }
+  @include mixins.aboveTablet {
+    padding: 80px 20px;
+    background-size: 500px;
+  }
+  @include mixins.aboveLaptop {}
+  @include mixins.justDesktop {}
+
+  &[class~=is-active] {
+    transition: transform 0.5s ease-out;
+    transform: translateX(100vw);
+  }
+
+  .copyright-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    z-index: 1;
+    display: none;
+    margin: auto;
+    text-align: center;
+    @include mixins.aboveLargeMobile {
+      display: block;
+    }
+  }
+}

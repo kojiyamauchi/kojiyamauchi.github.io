@@ -1,0 +1,38 @@
+@use "@/styles/mixins";
+
+.wrapper {
+  width: 95vw;
+  max-width: 1152px;
+  @include mixins.aboveLargeMobile {
+    width: 75vw;
+  }
+}
+
+.draw-shadow {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 20;
+
+  &[class~=is-introduction] {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+  }
+}
+
+.draw-typography {
+  fill: none;
+  stroke: #777;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 20;
+
+  &[class~=is-introduction] {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+  }
+}
+
