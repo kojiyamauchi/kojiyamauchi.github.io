@@ -262,7 +262,7 @@ exports[`Typography Container Component Unit Test Snap Shot Testing 1`] = `
       </svg>
     </div>
     <h2
-      class="wrapper sub-letter is-visited"
+      class="wrapper sub-letter is-visited is-display"
     >
       kojiyamauchi.github.io
     </h2>
