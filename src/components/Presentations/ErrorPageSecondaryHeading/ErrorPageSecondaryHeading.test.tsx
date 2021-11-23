@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Error Page Secondary Heading Component Unit Test.
 */
