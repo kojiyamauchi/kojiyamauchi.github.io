@@ -56,8 +56,9 @@ export const useOpenButton = (modalState: boolean, storybook: boolean): hooksRet
   })
 
   useEffect(() => {
-    if (!storybook) {
-      isOpen ? document.querySelector('.fixed-layout')!.classList.add('is-blur') : document.querySelector('.fixed-layout')!.classList.remove('is-blur')
+    const layout = document.querySelector('.fixed-layout')
+    if (!storybook && layout) {
+      isOpen ? layout.classList.add('is-blur') : layout.classList.remove('is-blur')
     }
   })
 
