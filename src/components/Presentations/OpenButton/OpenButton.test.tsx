@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Open Button Component Unit Test.
 */

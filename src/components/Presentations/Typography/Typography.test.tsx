@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Typography Component Unit Test.
 */

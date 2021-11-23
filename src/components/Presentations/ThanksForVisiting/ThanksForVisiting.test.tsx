@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Thanks For Visiting Component Unit Test.
 */

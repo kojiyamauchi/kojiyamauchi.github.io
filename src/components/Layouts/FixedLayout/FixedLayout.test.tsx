@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Fixed Layout Component Unit Test.
 */

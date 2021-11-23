@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   Button Container Component Unit Test.
 */

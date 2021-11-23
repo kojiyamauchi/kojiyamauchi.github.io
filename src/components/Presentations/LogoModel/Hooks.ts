@@ -114,7 +114,7 @@ const renderCore = (): {
     scene: Scene
     camera: PerspectiveCamera
     model: Group
-    meshGray: Mesh<PlaneGeometry, MeshLambertMaterial>
+    meshGray: Mesh
     meshBlack: Mesh
     spriteMaterial: SpriteMaterial
     orbitControls: OrbitControls
