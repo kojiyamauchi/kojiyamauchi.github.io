@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Logo Model Component Unit Test.
 */

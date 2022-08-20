@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Sub Letter Component Unit Test.
 */

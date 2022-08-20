@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Loading Introduction Component Unit Test.
 */

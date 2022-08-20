@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   No Content Component Unit Test.
 */

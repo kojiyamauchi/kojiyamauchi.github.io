@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Modal Container Component Unit Test.
 */

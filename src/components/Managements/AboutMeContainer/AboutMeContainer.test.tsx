@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   About Me Container Component Unit Test.
 */

@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Layout Component Unit Test.
 */

@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Link Cube Private Hooks Unit Test.
   Basically, Testing Around Hooks Return Values is Done on the Component Side.

@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Page Heading Component Unit Test.
 */

@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Jump To Old Portfolio Component Unit Test.
 */

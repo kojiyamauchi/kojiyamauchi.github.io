@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Page Footer Container Component Unit Test.
 */
