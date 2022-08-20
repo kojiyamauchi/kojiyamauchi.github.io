@@ -4,4 +4,4 @@
 
 import dynamic from 'next/dynamic'
 
-export const DynamicComponentLogoModel = dynamic<unknown>(() => import('./Component').then((component) => component.LogoModel), { ssr: false })
+export const DynamicComponentLogoModel = dynamic(() => import('./Component'), { ssr: false })

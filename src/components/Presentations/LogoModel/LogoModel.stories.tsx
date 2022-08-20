@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 import { store } from '@/ducks'
 
-import { LogoModel } from './Component'
+import LogoModel from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {
