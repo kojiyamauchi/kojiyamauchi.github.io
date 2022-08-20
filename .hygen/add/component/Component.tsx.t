@@ -22,18 +22,19 @@ import styles from './style.module.scss'
 type Props = {
   <% Array.from({ length: addPropsNumber }, (_info, index) => { -%>
     <%= h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`]) %>: <%- addPropsDetails[index][`addPropsType${index + 1}`] %>
-  <% }) %>
+  <% }) -%>
+  <%= addChildren ? 'children?: React.ReactNode' : '' -%>
 }
 <% } %>
 
-export const <%= componentName %>: React.<%= chooseComponentTypes === 'Function Component' ? 'FC' : 'VFC' %><%- addPropsNumber > 0 ? '<Props>' : '' %> = (<%= addPropsNumber > 0 || chooseComponentTypes === 'Function Component' ? '{' : '' %>
+export const <%= componentName %>: React.FC<%- addPropsNumber > 0 ? '<Props>' : '' %> = (<%= addPropsNumber > 0 || addChildren ? '{' : '' %>
   <% if (addPropsNumber > 0) { -%>
     <% Array.from({ length: addPropsNumber }, (_info, index) => { -%>
       <%= `${h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`])},` %>
     <% }) -%>
   <% } -%>
-  <%= chooseComponentTypes === 'Function Component' ? 'children' : '' -%>
-  <%= addPropsNumber > 0 || chooseComponentTypes === 'Function Component' ? '}' : '' %>): JSX.Element => {
+  <%= addChildren ? 'children' : '' -%>
+  <%= addPropsNumber > 0 || addChildren ? '}' : '' %>): JSX.Element => {
   <% if (useHooks) { %>
   const {
     <% if (addHooksReturnTypeAlias) { -%>
@@ -58,7 +59,7 @@ export const <%= componentName %>: React.<%= chooseComponentTypes === 'Function 
         <%= `{${h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`])}}` %>
       <% }) -%>
     <% } -%>
-    <% if (chooseComponentTypes === 'Function Component') { -%>
+    <% if (addChildren) { -%>
       { children }
     <% } %>
     </<%= wrapperTags %>>

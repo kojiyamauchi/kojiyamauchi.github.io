@@ -8,7 +8,7 @@ exports[`Copyright Component Unit Test Snap Shot Testing for About Me 1`] = `
     rel="noreferrer"
     target="_blank"
   >
-    © 2021 All The Small Things, All Rights Reserved.
+    © 2022 All The Small Things, All Rights Reserved.
   </a>
 </DocumentFragment>
 `;
@@ -21,7 +21,7 @@ exports[`Copyright Component Unit Test Snap Shot Testing for Error 1`] = `
     rel="noreferrer"
     target="_blank"
   >
-    © 2021 All The Small Things, All Rights Reserved.
+    © 2022 All The Small Things, All Rights Reserved.
   </a>
 </DocumentFragment>
 `;
@@ -34,7 +34,7 @@ exports[`Copyright Component Unit Test Snap Shot Testing for Footer 1`] = `
     rel="noreferrer"
     target="_blank"
   >
-    © 2021 All The Small Things, All Rights Reserved.
+    © 2022 All The Small Things, All Rights Reserved.
   </a>
 </DocumentFragment>
 `;
@@ -47,7 +47,7 @@ exports[`Copyright Component Unit Test Snap Shot Testing for Modal 1`] = `
     rel="noreferrer"
     target="_blank"
   >
-    © 2021 All The Small Things, All Rights Reserved.
+    © 2022 All The Small Things, All Rights Reserved.
   </a>
 </DocumentFragment>
 `;

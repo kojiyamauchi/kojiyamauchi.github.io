@@ -4,9 +4,10 @@
 
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { PageProps } from '@/types/type'
-import { SEO } from '@/components/Seo'
+
 import { ErrorPageSecondaryHeading } from '@/components/Presentations/ErrorPageSecondaryHeading'
+import { SEO } from '@/components/Seo'
+import { PageProps } from '@/types/type'
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
   props: {
@@ -15,7 +16,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: PagePro
   }
 })
 
-const Custom500: React.VFC = (): JSX.Element => {
+const Custom500: React.FC = (): JSX.Element => {
   const router = useRouter()
 
   return (

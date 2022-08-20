@@ -8,7 +8,7 @@ type Props = {
   closeAboutMe: () => void
 }
 
-export const AboutMe: React.VFC<Props> = ({ closeAboutMe }): JSX.Element => {
+export const AboutMe: React.FC<Props> = ({ closeAboutMe }): JSX.Element => {
   return (
     <div className={`${styles.wrapper} about-me`}>
       <h1 className={`${styles['primary-heading']} primary-heading`}>
@@ -17,13 +17,14 @@ export const AboutMe: React.VFC<Props> = ({ closeAboutMe }): JSX.Element => {
       <p className={`${styles.letter} letter is-en`}>
         I am mainly involved in web front-end development and production from Based in Tokyo, Japan.
         <br />
-        (Some back-end development and design work)
+        (Some back-end development)
         <br />
-        In the front-end area, we can handle everything from styling, such as UI implementation and design implementation, to interaction implementation,
-        animation implementation, and API communication, so please feel free to contact us.
+        In the front-end area, we can provide services such as development environment construction and maintenance, CI/CD construction (GitHub Actions), API
+        communication (Rest API・GraphQL), styling (UI implementation・design implementation), interaction implementation and animation implementation. so
+        please feel free to contact us.
         <br />
-        My skills, TypeScript / JavaScript / React / Next.js / Node.js / Webpack / Gulp / GitHub / Sass / CSS / HTML / VSCode / Figma(a little) / Sketch(a
-        little) / Photoshop / Illustrator.
+        My skills, TypeScript / JavaScript / React / Next.js / GraphQL / Node.js / Webpack / Gulp / GitHub / GitHub Actions / Sass / CSS / HTML / VSCode /
+        Photoshop / Illustrator.
         <br />
         Currently, past projects is private.
         <br />
@@ -36,11 +37,13 @@ export const AboutMe: React.VFC<Props> = ({ closeAboutMe }): JSX.Element => {
       <p className={`${styles.letter} letter is-jp`}>
         東京都内にて、主にWebフロントエンドの開発・制作に携わっております。
         <br />
-        (Node.js開発・デザイン制作も少々)
+        (Node.js開発も少々)
         <br />
-        フロントエンド領域においては、UI実装・デザイン実装等のスタイリング周りから、インタラクション実装・アニメーション実装・API通信まで承る事が可能ですので、お気軽にご連絡下さい。
+        フロントエンド領域においては、開発環境構築・整備、CI・CD構築 (GitHub Actions)、Rest
+        API・GraphQL等のAPI通信、UI実装・デザイン実装等のスタイリング周り、インタラクション実装・アニメーション実装まで承る事が可能ですので、お気軽にご連絡下さい。
         <br />
-        使用言語・開発環境等は、TypeScript・JavaScript・React・Next.js・Node.js・Webpack・Gulp・GitHub・Sass・CSS・HTML・VSCode・Figma(少々)・Sketch(少々)・Photoshop・Illustratorになります。
+        使用言語・開発環境等は、TypeScript・JavaScript・React・Next.js・GraphQL・Node.js・Webpack・Gulp・GitHub・GitHub
+        Actions・Sass・CSS・HTML・VSCode・Photoshop・Illustratorになります。
         <br />
         現在、制作実績は非公開になりますので、下記よりお問い合わせ下さい。
         <br />

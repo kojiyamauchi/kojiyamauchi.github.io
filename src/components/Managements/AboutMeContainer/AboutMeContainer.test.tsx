@@ -1,15 +1,15 @@
-/**
- * @jest-environment jsdom
- */
 /*
   About Me Container Component Unit Test.
 */
 
-import { AboutMeContainer } from './Component'
-import { Provider } from 'react-redux'
-import { store } from '@/ducks'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+import { Provider } from 'react-redux'
+
+import { store } from '@/ducks'
+
+import { AboutMeContainer } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('About Me Container Component Unit Test', () => {

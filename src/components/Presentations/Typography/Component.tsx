@@ -72,7 +72,7 @@ export type Props = {
   visited: boolean
 }
 
-export const Typography: React.VFC<Props> = ({ visited }): JSX.Element => {
+export const Typography: React.FC<Props> = ({ visited }): JSX.Element => {
   return (
     <div className={styles.wrapper} id="typography-component">
       <svg

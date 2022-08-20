@@ -12,7 +12,7 @@ export type Props = {
   uiTest?: boolean
 }
 
-export const OpenButton: React.VFC<Props> = ({ modalState, modalOpen, storybook, uiTest = false }): JSX.Element => {
+export const OpenButton: React.FC<Props> = ({ modalState, modalOpen, storybook, uiTest = false }): JSX.Element => {
   const { myComponent, letter, randomClass } = useOpenButton(modalState, storybook)
 
   return (

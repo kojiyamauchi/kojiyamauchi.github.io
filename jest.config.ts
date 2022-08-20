@@ -1,6 +1,7 @@
 import type { Config } from '@jest/types'
 
 const config: Config.InitialOptions = {
+  testEnvironment: 'jest-environment-jsdom',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
     '^@/(.+)': '<rootDir>/src/$1',
@@ -14,7 +15,9 @@ const config: Config.InitialOptions = {
   globals: {
     'ts-jest': {
       tsconfig: 'tsconfig.jest.json'
-    }
+    },
+    envMode: 'test',
+    basePath: ''
   },
   testMatch: [
     '**/src/tests/**/*.test.+(ts|tsx|js|jsx)',

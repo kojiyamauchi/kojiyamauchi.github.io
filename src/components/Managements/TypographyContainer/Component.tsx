@@ -2,12 +2,13 @@
   Typography Container Component.
 */
 
-import { Typography } from '@/components/Presentations/Typography'
 import { SubLetter } from '@/components/Presentations/SubLetter'
+import { Typography } from '@/components/Presentations/Typography'
+
 import { useTypography } from './Hooks'
 import styles from './style.module.scss'
 
-export const TypographyContainer: React.VFC = (): JSX.Element => {
+export const TypographyContainer: React.FC = (): JSX.Element => {
   const { myComponent, visited } = useTypography()
 
   return (

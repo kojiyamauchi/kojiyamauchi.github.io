@@ -1,13 +1,12 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Jump To Old Portfolio Component Unit Test.
 */
 
-import { JumpToOldPortfolio } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { JumpToOldPortfolio } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Jump To Old Portfolio Component Unit Test', () => {

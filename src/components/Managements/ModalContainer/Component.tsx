@@ -2,17 +2,19 @@
   Modal Container Component.
 */
 
-import { Suspense } from 'react'
-import { useModal } from './Hooks'
+import { ResizeObserver } from '@juggle/resize-observer'
 import { Canvas } from '@react-three/fiber'
-import { ThanksForVisiting } from '@/components/Presentations/ThanksForVisiting'
+import { Suspense } from 'react'
+
+import { Copyright } from '@/components/Presentations/Copyright'
 import { JumpToOldPortfolio } from '@/components/Presentations/JumpToOldPortfolio'
 import { DynamicComponentLinkCube } from '@/components/Presentations/LinkCube'
-import { Copyright } from '@/components/Presentations/Copyright'
-import styles from './style.module.scss'
-import { ResizeObserver } from '@juggle/resize-observer'
+import { ThanksForVisiting } from '@/components/Presentations/ThanksForVisiting'
 
-export const ModalContainer: React.VFC = (): JSX.Element => {
+import { useModal } from './Hooks'
+import styles from './style.module.scss'
+
+export const ModalContainer: React.FC = (): JSX.Element => {
   const { myComponent, cubesProps, generatePositionValue, openAboutMe, copyrightHover } = useModal()
 
   return (

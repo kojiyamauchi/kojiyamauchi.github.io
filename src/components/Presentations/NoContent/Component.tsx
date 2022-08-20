@@ -2,7 +2,8 @@
   No Content Component.
 */
 
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [
@@ -53,7 +54,7 @@ type Props = {
   copyrightHover: boolean
 }
 
-export const NoContent: React.VFC<Props> = ({ copyrightHover }): JSX.Element => {
+export const NoContent: React.FC<Props> = ({ copyrightHover }): JSX.Element => {
   const myComponent = useRef<SVGSVGElement>(null)
 
   useEffect(() => myComponent.current!.classList.add('is-display'))

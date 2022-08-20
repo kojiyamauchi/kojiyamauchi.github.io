@@ -1,16 +1,16 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Modal Container Component Unit Test.
 */
 
-import { ModalContainer } from './Component'
+import '@testing-library/jest-dom/extend-expect'
+
+import { act, render } from '@testing-library/react'
 import { Provider } from 'react-redux'
+
 import { store } from '@/ducks'
 import { modalToggle } from '@/ducks/Modal'
-import { render, act } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+
+import { ModalContainer } from './Component'
 // import userEvent from '@testing-library/user-event'
 // import { renderHook } from '@testing-library/react-hooks/dom/'
 

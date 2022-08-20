@@ -2,14 +2,15 @@
   Layout
 */
 
-import { FixedLayout } from '@/components/Layouts/FixedLayout'
 import { ErrorLayout } from '@/components/Layouts/ErrorLayout'
+import { FixedLayout } from '@/components/Layouts/FixedLayout'
 import { PageProps } from '@/types/type'
 
 type Props = {
   pageProps: PageProps
   currentLocation?: string
   loading: React.ReactNode
+  children?: React.ReactNode
 }
 
 const switchComponent = (

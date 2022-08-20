@@ -1,13 +1,12 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Layout Component Unit Test.
 */
 
-import { ErrorLayout } from './'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { ErrorLayout } from './'
 // import userEvent from '@testing-library/user-event'
 
 describe('Fixed Layout Component Unit Test', () => {

@@ -3,8 +3,8 @@ const path = require('path')
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
+const Open = require('open')
 const pickComponentsDir = path.resolve(__dirname, '../src/components/')
-const { basePath } = require('../next.config')
 
 module.exports = {
   stories: ['../src/components/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -42,15 +42,6 @@ module.exports = {
   // Extend webpack config.
   webpackFinal: async (config, { configType }) => {
     const webpackEnvMode = configType.toLowerCase()
-    // Branches path prefix on production.
-    const branchesBasePath = () => {
-      if (webpackEnvMode === 'production') {
-        return !!basePath ? `${basePath}/storybook/` : '/storybook/'
-      } else {
-        return ''
-      }
-    }
-    config.output.publicPath = branchesBasePath()
 
     // Don’t watched other than the storybook files.
     config.watchOptions.ignored = /^(?!.*\.(stories|story))(?=.*\.(js|ts|tsx|jsx)$).*$|node_modules/
@@ -131,8 +122,17 @@ module.exports = {
           files: [`${pickComponentsDir}/**/*.stories.tsx`],
           failOnWarning: true
         }),
-        new WebpackNotifierPlugin({ title: 'ESLint or Webpack Build | Storybook' }),
-        new ForkTsCheckerNotifierWebpackPlugin({ title: 'TypeScript | Storybook' })
+        new WebpackNotifierPlugin({
+          title: (params) => {
+            const status = `${params.status.charAt(0).toUpperCase()}${params.status.slice(1)}`
+            if (params.message.includes('eslint')) {
+              return `🧐 Storybook | ESLint - ${status}`
+            } else {
+              return `🏗 Storybook | Webpack Build - ${status}`
+            }
+          }
+        }),
+        new ForkTsCheckerNotifierWebpackPlugin({ title: 'Storybook | TypeScript' })
       ])
 
     return config
@@ -146,4 +146,8 @@ module.exports = {
     // For that, It’s pending. | See -> https://github.com/babel/babel/issues/11622
     ...options
   })
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  Open(`http://localhost:6006`, { app: { name: 'Google Chrome Canary' }, wait: true, newInstance: true })
 }

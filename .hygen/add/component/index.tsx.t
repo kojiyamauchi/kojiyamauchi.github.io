@@ -17,6 +17,7 @@ import styles from './style.module.scss'
 
 type Props = {
   pages: PageProps['pages']
+  children?: React.ReactNode
 }
 
 export const <%= Name %>Layout: React.FC<Props> = ({ pages, children }): JSX.Element => {

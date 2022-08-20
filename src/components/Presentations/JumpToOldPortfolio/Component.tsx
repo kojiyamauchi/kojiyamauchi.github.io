@@ -2,7 +2,8 @@
   Jump To Old Portfolio Component.
 */
 
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [
@@ -63,7 +64,7 @@ type Props = {
   copyrightHover: boolean
 }
 
-export const JumpToOldPortfolio: React.VFC<Props> = ({ openAboutMe, copyrightHover }): JSX.Element => {
+export const JumpToOldPortfolio: React.FC<Props> = ({ openAboutMe, copyrightHover }): JSX.Element => {
   const myComponent = useRef<HTMLDivElement>(null)
 
   useEffect(() => myComponent.current!.classList.add('is-display'))

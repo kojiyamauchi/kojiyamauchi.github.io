@@ -2,6 +2,7 @@
   About Me Store.
 */
 import { createAction, createReducer } from '@reduxjs/toolkit'
+
 import { AboutMeTypes } from '@/types/type'
 
 const initialState: AboutMeTypes = {

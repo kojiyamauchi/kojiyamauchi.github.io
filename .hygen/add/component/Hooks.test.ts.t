@@ -6,9 +6,7 @@ sh: "<%= chooseOutPutDir === 'Layouts' ? null : !useHooks ? null : chooseOutPutD
   camelName = h.changeCase.camel(name)
 -%>
 <% if (chooseOutPutDir !== 'Layouts' && useHooks) { -%>
-/**
- * @jest-environment jsdom
- */
+
 /*
   <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %><%= chooseOutPutDir === 'Managements' ? ' Container ' : ' ' %>Private Hooks Unit Test.
   Basically, Testing Around Hooks Return Values is Done on the Component Side.

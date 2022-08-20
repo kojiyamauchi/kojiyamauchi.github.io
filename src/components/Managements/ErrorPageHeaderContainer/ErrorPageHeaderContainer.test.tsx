@@ -1,13 +1,12 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Page Header Container Component Unit Test.
 */
 
-import { ErrorPageHeaderContainer } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { ErrorPageHeaderContainer } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Error Page Header Container Component Unit Test', () => {

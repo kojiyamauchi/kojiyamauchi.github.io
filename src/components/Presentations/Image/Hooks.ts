@@ -2,8 +2,9 @@
   Image Private Hooks.
 */
 
-import { useEffect, useState, CSSProperties } from 'react'
-import type { Props, OptionalProps } from './Component'
+import { CSSProperties, useEffect, useState } from 'react'
+
+import type { OptionalProps, Props } from './Component'
 
 export type hooksReturnType = {
   firstRender: boolean

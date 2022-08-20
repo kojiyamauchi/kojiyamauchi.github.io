@@ -1,13 +1,12 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Thanks For Visiting Component Unit Test.
 */
 
-import { ThanksForVisiting } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { ThanksForVisiting } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Thanks For Visiting Component Unit Test', () => {
