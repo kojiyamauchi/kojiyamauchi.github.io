@@ -3,6 +3,7 @@
 */
 
 import Link from 'next/link'
+
 import styles from './style.module.scss'
 
 export const ErrorPageNavigation: React.VFC = (): JSX.Element => {

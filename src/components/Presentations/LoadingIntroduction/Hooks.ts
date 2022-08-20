@@ -2,8 +2,9 @@
   Loading Introduction Private Hooks.
 */
 
-import { useRef, useState, useEffect, RefObject } from 'react'
-import { useSelector, shallowEqual } from 'react-redux'
+import { RefObject, useEffect, useRef, useState } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+
 import { StoreTypes } from '@/types/type'
 
 export const sleep = (ms: number): Promise<number> => {

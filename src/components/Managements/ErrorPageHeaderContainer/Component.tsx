@@ -4,6 +4,7 @@
 
 import { ErrorPageHeading } from '@/components/Presentations/ErrorPageHeading'
 import { ErrorPageNavigation } from '@/components/Presentations/ErrorPageNavigation'
+
 import styles from './style.module.scss'
 
 export const ErrorPageHeaderContainer: React.VFC = (): JSX.Element => {

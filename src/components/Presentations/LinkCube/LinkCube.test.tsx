@@ -5,10 +5,12 @@
   Link Cube Component Unit Test.
 */
 
-import { LinkCube } from './Component'
+import '@testing-library/jest-dom/extend-expect'
+
 import { render /* ,screen */ } from '@testing-library/react'
 import { Suspense } from 'react'
-import '@testing-library/jest-dom/extend-expect'
+
+import { LinkCube } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 const mockProps = {

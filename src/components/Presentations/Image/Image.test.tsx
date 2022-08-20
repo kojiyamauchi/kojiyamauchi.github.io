@@ -5,9 +5,11 @@
   Image Component Unit Test.
 */
 
-import { Image } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { Image } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 beforeAll(() => {

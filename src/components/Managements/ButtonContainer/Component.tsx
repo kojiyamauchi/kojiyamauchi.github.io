@@ -2,13 +2,15 @@
   Button Container Component.
 */
 
-import { DynamicComponentOpenButton } from '@/components/Presentations/OpenButton'
+import { shallowEqual, useSelector } from 'react-redux'
+
 import { CloseButton } from '@/components/Presentations/CloseButton'
-import styles from './style.module.scss'
+import { DynamicComponentOpenButton } from '@/components/Presentations/OpenButton'
 import { store } from '@/ducks'
 import { modalToggle } from '@/ducks/Modal'
-import { useSelector, shallowEqual } from 'react-redux'
 import { StoreTypes } from '@/types/type'
+
+import styles from './style.module.scss'
 
 export const modalOpen = (): void => void store.dispatch(modalToggle({ isOpen: true }))
 export const modalClose = (): void => void store.dispatch(modalToggle({ isOpen: false }))

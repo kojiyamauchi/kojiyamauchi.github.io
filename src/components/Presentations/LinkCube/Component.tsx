@@ -3,6 +3,7 @@
 */
 
 import { DoubleSide } from 'three'
+
 import { useLinkCube } from './Hooks'
 
 export type Props = {

@@ -5,9 +5,11 @@
   Sub Letter Component Unit Test.
 */
 
-import { SubLetter } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { SubLetter } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Sub Letter Component Unit Test', () => {

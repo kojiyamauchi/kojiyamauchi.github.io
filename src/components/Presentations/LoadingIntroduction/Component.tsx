@@ -3,6 +3,7 @@
 */
 
 import { useRouter } from 'next/router'
+
 import { useLoadingIntroduction } from './Hooks'
 import styles from './style.module.scss'
 

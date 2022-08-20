@@ -3,6 +3,7 @@
 */
 
 import { Copyright } from '@/components/Presentations/Copyright'
+
 import styles from './style.module.scss'
 
 export const FooterContainer: React.VFC = (): JSX.Element => {

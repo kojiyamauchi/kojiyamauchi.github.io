@@ -6,8 +6,9 @@
   Basically, Testing Around Hooks Return Values is Done on the Component Side.
 */
 
-import { generatePosition, generateCubeSize } from './Hooks'
 import '@testing-library/jest-dom/extend-expect'
+
+import { generateCubeSize, generatePosition } from './Hooks'
 // import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})

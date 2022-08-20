@@ -5,9 +5,11 @@
   Error Page Footer Container Component Unit Test.
 */
 
-import { ErrorPageFooterContainer } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { ErrorPageFooterContainer } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Error Page Footer Container Component Unit Test', () => {

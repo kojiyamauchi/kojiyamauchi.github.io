@@ -2,7 +2,8 @@
   Copyright Component.
 */
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import styles from './style.module.scss'
 
 type Props = {

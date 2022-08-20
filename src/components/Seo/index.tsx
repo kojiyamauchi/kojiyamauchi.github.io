@@ -1,6 +1,6 @@
+import { baseSeo } from 'base.config.client'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { baseSeo } from 'base.config.client'
 import Script from 'next/script'
 
 type Props = {

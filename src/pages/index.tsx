@@ -8,15 +8,16 @@
   fallback: blocking -> SSR && The Second and Subsequent Accesses Return SSR Cache.
 */
 
-import { useEffect } from 'react'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { PageProps } from '@/types/type'
-import { SEO } from '@/components/Seo'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
 import { TypographyContainer } from '@/components/Managements/TypographyContainer'
 import { DynamicComponentLogoModel } from '@/components/Presentations/LogoModel'
-import { useDispatch } from 'react-redux'
+import { SEO } from '@/components/Seo'
 import { firstVisitToggle } from '@/ducks/FirstVisit'
+import { PageProps } from '@/types/type'
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
   props: {

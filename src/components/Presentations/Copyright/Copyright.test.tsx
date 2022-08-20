@@ -5,9 +5,11 @@
   Copyright Component Unit Test.
 */
 
-import { Copyright } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { Copyright } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Copyright Component Unit Test', () => {

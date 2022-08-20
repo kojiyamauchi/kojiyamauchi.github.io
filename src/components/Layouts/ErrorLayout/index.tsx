@@ -2,10 +2,12 @@
   Error Layout.
 */
 
-import { ErrorPageHeaderContainer } from '@/components/Managements/ErrorPageHeaderContainer'
-import { ErrorPageFooterContainer } from '@/components/Managements/ErrorPageFooterContainer'
 import { useRouter } from 'next/router'
+
+import { ErrorPageFooterContainer } from '@/components/Managements/ErrorPageFooterContainer'
+import { ErrorPageHeaderContainer } from '@/components/Managements/ErrorPageHeaderContainer'
 import { PageProps } from '@/types/type'
+
 import styles from './style.module.scss'
 
 type Props = {

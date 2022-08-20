@@ -2,9 +2,10 @@
   Link Cube Private Hooks.
 */
 
-import { useState, useEffect, useRef, useMemo, RefObject } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
+import { RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
+
 import type { Props } from './Component'
 
 export const generatePosition = (mobile: number, tablet: number, deskTop: number): number => {

@@ -2,7 +2,8 @@
   Jump To Old Portfolio Component.
 */
 
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
 import styles from './style.module.scss'
 
 const pathGraffitiArr = [

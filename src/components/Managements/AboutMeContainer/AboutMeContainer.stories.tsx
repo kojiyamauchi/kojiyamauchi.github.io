@@ -3,10 +3,12 @@
 */
 
 import { useEffect } from 'react'
-import { AboutMeContainer } from './Component'
 import { Provider } from 'react-redux'
+
 import { store } from '@/ducks'
 import { aboutMeToggle } from '@/ducks/AboutMe'
+
+import { AboutMeContainer } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

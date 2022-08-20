@@ -3,11 +3,13 @@
 */
 
 import { useEffect } from 'react'
-import { ModalContainer } from './Component'
 import { Provider } from 'react-redux'
+
 import { store } from '@/ducks'
-import { modalToggle } from '@/ducks/Modal'
 import { aboutMeToggle } from '@/ducks/AboutMe'
+import { modalToggle } from '@/ducks/Modal'
+
+import { ModalContainer } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

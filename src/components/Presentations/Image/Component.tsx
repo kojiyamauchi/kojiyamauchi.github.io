@@ -2,8 +2,9 @@
   Image Component.
 */
 
-import { useImage } from './Hooks'
 import { useRouter } from 'next/router'
+
+import { useImage } from './Hooks'
 import styles from './style.module.scss'
 
 export type Props = {

@@ -2,9 +2,10 @@
   Link Cube Component Storybook.
 */
 
-import { LinkCube } from './Component'
-import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
+
+import { LinkCube } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

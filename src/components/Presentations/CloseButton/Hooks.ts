@@ -2,7 +2,7 @@
   Close Button Private Hooks.
 */
 
-import { useEffect, useRef, RefObject } from 'react'
+import { RefObject, useEffect, useRef } from 'react'
 
 export const letter = 'CLOSE'
 

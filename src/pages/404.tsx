@@ -4,9 +4,10 @@
 
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { PageProps } from '@/types/type'
-import { SEO } from '@/components/Seo'
+
 import { ErrorPageSecondaryHeading } from '@/components/Presentations/ErrorPageSecondaryHeading'
+import { SEO } from '@/components/Seo'
+import { PageProps } from '@/types/type'
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: PageProps }> => ({
   props: {
