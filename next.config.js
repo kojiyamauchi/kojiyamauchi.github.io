@@ -1,34 +1,40 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin')
-// TODO: const ESLintPlugin = require('eslint-webpack-plugin')
-// TODO: const StylelintPlugin = require('stylelint-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const StylelintPlugin = require('stylelint-webpack-plugin')
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+const Open = require('open')
 const logFontBold = '\x1b[1m'
 const logFontColorCyan = '\u001b[36m'
 const logFontReset = '\x1b[0m'
 
-const pathPrefix = () => {
-  const config = {
-    enable: false,
-    subDir: '/'
+const pathPrefix = ''
+process.env.npm_package_config_path_prefix = pathPrefix
+const configPathPrefix = () => {
+  if (!!process.env.npm_package_config_path_prefix) {
+    return {
+      basePath: `/${process.env.npm_package_config_path_prefix}`,
+      assetPrefix: `/${process.env.npm_package_config_path_prefix}/`
+    }
   }
-  if (!config.enable) return
-  return { basePath: config.subDir, assetPrefix: `${config.subDir}/` }
+  return false
 }
 
 module.exports = {
-  webpack5: true,
   webpack: (config, option) => {
-    option.isServer && console.info('🏗  Currently Webpack Ver:', `${logFontBold}${logFontColorCyan}${option.webpack.version}${logFontReset}`)
+    // option are { buildId, dev, isServer, defaultLoaders, webpack }
+    const { isServer, webpack } = option
+    // option are { module, plugins, etc... }
+    const { plugins } = config
 
     // When Extend Webpack Rule.
-    // config.module.rules.push({})
+    // module.rules.push({})
 
-    option.isServer &&
-      config.plugins.push(
+    isServer &&
+      plugins.push(
         new CopyWebpackPlugin({
           patterns: [
             {
@@ -52,13 +58,29 @@ module.exports = {
             }
           }
         }),
-        // Currently, ESlint & Stylelint alerts are some not displayed in the terminal on Next.js. (I want to see errors in real time.)
-        // See -> https://github.com/vercel/next.js/issues/9904
-        // See -> https://stackoverflow.com/questions/59558063/next-js-eslint-is-not-linting-any-pages-in-dev-mode-aside-from-pages-app-js
-        // TODO: new ESLintPlugin({ files: [path.resolve(__dirname, 'src/**/**/*.{ts,tsx,js,jsx}')], failOnWarning: true }),
-        // TODO: new StylelintPlugin({ files: 'src/**/**/*.(s(c|a)ss|css)', fix: true }),
-        new ForkTsCheckerNotifierWebpackPlugin({ title: 'TypeScript | Next.js' }),
-        new WebpackNotifierPlugin({ title: 'ESLint or Webpack Build | Next.js ' }),
+        new ESLintPlugin({
+          files: [path.resolve(__dirname, 'src/**/**/*.{ts,tsx,js,jsx}')],
+          failOnWarning: true
+        }),
+        new StylelintPlugin({
+          files: 'src/**/**/*.(s(c|a)ss|css)',
+          fix: true
+        }),
+        new ForkTsCheckerNotifierWebpackPlugin({
+          title: 'Next.js | TypeScript'
+        }),
+        new WebpackNotifierPlugin({
+          title: (params) => {
+            const status = `${params.status.charAt(0).toUpperCase()}${params.status.slice(1)}`
+            if (params.message.includes('eslint')) {
+              return `🧐 Next.js | ESLint - ${status}`
+            } else if (params.message.includes('stylelint')) {
+              return `🧐 Next.js | Stylelint - ${status}`
+            } else {
+              return `🏗 Next.js | Webpack Build - ${status}`
+            }
+          }
+        }), // Real Text -> ESLint or Stylelint or Webpack Build | Next.js
         new ImageminWebpWebpackPlugin({
           config: [
             {
@@ -72,12 +94,19 @@ module.exports = {
           silent: false
         })
       )
+
+    if (!isServer && process.env.NODE_ENV !== 'production') {
+      console.info('🏗  Currently Webpack Ver:', `${logFontBold}${logFontColorCyan}${webpack.version}${logFontReset}`)
+      Open(`http://localhost:3000/${process.env.npm_package_config_path_prefix}`, { app: { name: 'Google Chrome Canary' } })
+    }
+
     return config
   },
   // Pick Up Node Env from Client Side & Pick Up Base Path from Outside the FC.
   env: {
     envMode: process.env.NODE_ENV,
-    basePath: pathPrefix() ? pathPrefix().basePath : ''
+    basePath: !!configPathPrefix() ? configPathPrefix().basePath : ''
   },
-  ...pathPrefix()
+
+  ...configPathPrefix()
 }
