@@ -21,6 +21,7 @@ words:
   - kojiyamauchi
   - msapplication
   - navi
+  - nofilter
   - noreferrer
   - pathpida
   - peaceiris
@@ -32,6 +33,7 @@ words:
   - stylelint
   - STYLELINT
   - tsbuildinfo
+  - TYPECHECK
   - typographys
   - vercel
   - webp
