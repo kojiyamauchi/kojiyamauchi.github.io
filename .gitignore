@@ -40,4 +40,8 @@ yarn.lock
 src/pages/_error.tsx
 delivery/*
 !delivery/.gitkeep
+public/webps/*.jpg
+public/webps/*.jpeg
+public/webps/*.png
+public/webps/*.gif
 tsconfig.tsbuildinfo
