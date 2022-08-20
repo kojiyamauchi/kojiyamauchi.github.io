@@ -6,12 +6,12 @@ on:
 
 env:
   NODE_VERSION: 16.x
-  LAUNCH_CSPELL: off # Launch CSpell. [ on, off ]
-  LAUNCH_ESLINT: off # Launch ESLint. [ on, off ]
-  LAUNCH_STYLELINT: off # Launch Stylelint. [ on, off ]
-  LAUNCH_TYPECHECK: off # Launch tsc. [ on, off ]
-  LAUNCH_JEST: off # Launch Jest. [ on, off ]
-  LAUNCH_BUILD: off # Launch Build. [ on, off ]
+  LAUNCH_CSPELL: on # Launch CSpell. [ on, off ]
+  LAUNCH_ESLINT: on # Launch ESLint. [ on, off ]
+  LAUNCH_STYLELINT: on # Launch Stylelint. [ on, off ]
+  LAUNCH_TYPECHECK: on # Launch tsc. [ on, off ]
+  LAUNCH_JEST: on # Launch Jest. [ on, off ]
+  LAUNCH_BUILD: on # Launch Build. [ on, off ]
 
 jobs:
   setup:
