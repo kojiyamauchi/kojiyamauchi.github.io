@@ -100,11 +100,6 @@
     "webpack": "^5.74.0",
     "webpack-notifier": "^1.15.0"
   },
-  "config": {
-    "path": {
-      "prefix": "/"
-    }
-  },
   "scripts": {
     "prepare": "husky install",
     "setup": "rm -rf .git",
