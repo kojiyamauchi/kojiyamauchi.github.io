@@ -1,0 +1,53 @@
+version: 0.2
+language: en
+words:
+  - apng
+  - behance
+  - callout
+  - deactive
+  - docgen
+  - Docgen
+  - esbenp
+  - gltf
+  - GLTF
+  - gsap
+  - gtag
+  - hygen
+  - immer
+  - JCML
+  - jsdom
+  - Kaku
+  - Koji
+  - kojiyamauchi
+  - msapplication
+  - navi
+  - noreferrer
+  - peaceiris
+  - Phong
+  - Photoshop
+  - reduxjs
+  - reviewdog
+  - rimraf
+  - stylelint
+  - STYLELINT
+  - tsbuildinfo
+  - typographys
+  - vercel
+  - webp
+  - webps
+  - Webps
+  - xlink
+  - Yamauchi
+flagWords:
+  - hte
+ignorePaths:
+  - node_modules/**
+  - public/**
+  - .next/**
+  - .git/**
+  - .husky/**
+  - .history/**
+  - yarn.lock
+  - tsconfig.tsbuildinfo
+  - next-env.d.ts
+  - cspell.yml
