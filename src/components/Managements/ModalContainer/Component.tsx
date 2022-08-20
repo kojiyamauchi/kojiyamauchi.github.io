@@ -14,7 +14,7 @@ import { ThanksForVisiting } from '@/components/Presentations/ThanksForVisiting'
 import { useModal } from './Hooks'
 import styles from './style.module.scss'
 
-export const ModalContainer: React.VFC = (): JSX.Element => {
+export const ModalContainer: React.FC = (): JSX.Element => {
   const { myComponent, cubesProps, generatePositionValue, openAboutMe, copyrightHover } = useModal()
 
   return (

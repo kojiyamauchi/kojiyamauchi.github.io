@@ -16,6 +16,7 @@ type Props = {
   pages: PageProps['pages']
   currentLocation?: string
   loading?: React.ReactNode
+  children?: React.ReactNode
 }
 
 export const FixedLayout: React.FC<Props> = ({ pages, children, currentLocation, loading }): JSX.Element => {

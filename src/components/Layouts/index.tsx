@@ -10,6 +10,7 @@ type Props = {
   pageProps: PageProps
   currentLocation?: string
   loading: React.ReactNode
+  children?: React.ReactNode
 }
 
 const switchComponent = (

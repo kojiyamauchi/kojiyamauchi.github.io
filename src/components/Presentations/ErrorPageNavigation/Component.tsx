@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import styles from './style.module.scss'
 
-export const ErrorPageNavigation: React.VFC = (): JSX.Element => {
+export const ErrorPageNavigation: React.FC = (): JSX.Element => {
   const link = [{ path: '/', letter: 'Back to Top Page', id: 1 }]
 
   const navigation = (): JSX.Element[] => {

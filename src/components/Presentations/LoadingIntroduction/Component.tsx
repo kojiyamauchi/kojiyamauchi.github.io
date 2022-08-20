@@ -11,7 +11,7 @@ type Props = {
   storybook?: boolean
 }
 
-export const LoadingIntroduction: React.VFC<Props> = ({ storybook = false }): JSX.Element => {
+export const LoadingIntroduction: React.FC<Props> = ({ storybook = false }): JSX.Element => {
   const { loading, myComponent } = useLoadingIntroduction(storybook)
   const router = useRouter()
 

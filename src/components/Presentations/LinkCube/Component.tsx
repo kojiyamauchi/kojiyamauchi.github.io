@@ -29,7 +29,7 @@ export type Props = {
   storybook?: boolean
 }
 
-export const LinkCube: React.VFC<Props> = ({ textureName, linkUrl, positionValue, rotate, storybook = false }): JSX.Element => {
+export const LinkCube: React.FC<Props> = ({ textureName, linkUrl, positionValue, rotate, storybook = false }): JSX.Element => {
   const { myComponent, memorizePositionX, memorizePositionY, memorizeCubeSize, texture } = useLinkCube(textureName, positionValue, rotate, storybook)
 
   return (

@@ -8,7 +8,7 @@ type Props = {
   closeAboutMe: () => void
 }
 
-export const AboutMe: React.VFC<Props> = ({ closeAboutMe }): JSX.Element => {
+export const AboutMe: React.FC<Props> = ({ closeAboutMe }): JSX.Element => {
   return (
     <div className={`${styles.wrapper} about-me`}>
       <h1 className={`${styles['primary-heading']} primary-heading`}>

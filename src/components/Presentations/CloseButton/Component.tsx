@@ -10,7 +10,7 @@ type Props = {
   modalClose: () => void
 }
 
-export const CloseButton: React.VFC<Props> = ({ modalState, modalClose }): JSX.Element => {
+export const CloseButton: React.FC<Props> = ({ modalState, modalClose }): JSX.Element => {
   const { myComponent, letter } = useCloseButton(modalState)
 
   return (

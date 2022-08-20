@@ -15,7 +15,7 @@ import styles from './style.module.scss'
 
 export const closeAboutMe = (): void => void store.dispatch(aboutMeToggle({ isOpen: false }))
 
-export const AboutMeContainer: React.VFC = (): JSX.Element => {
+export const AboutMeContainer: React.FC = (): JSX.Element => {
   const router = useRouter()
   const aboutMe = useSelector<StoreTypes, boolean>((state) => state.aboutMeStore.isOpen, shallowEqual)
 

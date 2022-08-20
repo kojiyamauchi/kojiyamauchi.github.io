@@ -9,6 +9,6 @@ type Props = {
   translation?: boolean
 }
 
-export const ErrorPageSecondaryHeading: React.VFC<Props> = ({ letter, translation }): JSX.Element => (
+export const ErrorPageSecondaryHeading: React.FC<Props> = ({ letter, translation }): JSX.Element => (
   <h2 className={`${styles['secondary-heading']} error-page-secondary-heading page-heading ${translation ? styles['is-translation'] : ''}`}>{letter}.😵</h2>
 )

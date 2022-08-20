@@ -11,7 +11,7 @@ type Props = {
   parent: 'footer' | 'modal' | 'about-me' | 'error'
 }
 
-export const Copyright: React.VFC<Props> = ({ className, parent }): JSX.Element => {
+export const Copyright: React.FC<Props> = ({ className, parent }): JSX.Element => {
   const [year, setYear] = useState<number | null>(null)
 
   useEffect(() => {

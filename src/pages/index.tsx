@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: PagePro
   }
 })
 
-const PrimaryPage: React.VFC = (): JSX.Element => {
+const PrimaryPage: React.FC = (): JSX.Element => {
   const router = useRouter()
   const dispatch = useDispatch()
 

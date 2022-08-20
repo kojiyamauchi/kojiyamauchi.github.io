@@ -12,6 +12,7 @@ import styles from './style.module.scss'
 
 type Props = {
   pages: PageProps['pages']
+  children?: React.ReactNode
 }
 
 export const ErrorLayout: React.FC<Props> = ({ pages, children }): JSX.Element => {

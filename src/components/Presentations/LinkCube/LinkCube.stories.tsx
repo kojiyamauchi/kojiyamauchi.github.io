@@ -64,7 +64,7 @@ const mockProps = {
   storybookState: true
 }
 
-const StorybookWrapper: React.FC = ({ children }): JSX.Element => (
+const StorybookWrapper: React.FC<{ children: React.ReactNode }> = ({ children }): JSX.Element => (
   <div style={{ width: '100%', height: '100vh', backgroundColor: '#000' }}>
     <Canvas>
       <Suspense fallback={null}>

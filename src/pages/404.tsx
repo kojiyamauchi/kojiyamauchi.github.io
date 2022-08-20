@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: PagePro
   }
 })
 
-const Custom404: React.VFC = (): JSX.Element => {
+const Custom404: React.FC = (): JSX.Element => {
   const router = useRouter()
 
   return (

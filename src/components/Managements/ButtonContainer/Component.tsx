@@ -19,7 +19,7 @@ type Props = {
   storybook?: boolean
 }
 
-export const ButtonContainer: React.VFC<Props> = ({ storybook = false }): JSX.Element => {
+export const ButtonContainer: React.FC<Props> = ({ storybook = false }): JSX.Element => {
   const isOpen = useSelector<StoreTypes, boolean>((state) => state.modalStore.isOpen, shallowEqual)
   return (
     <div className={`${styles.wrapper} button-container`}>
