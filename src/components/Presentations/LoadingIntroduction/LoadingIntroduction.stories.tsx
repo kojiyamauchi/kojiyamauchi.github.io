@@ -2,9 +2,11 @@
   Loading Introduction Component Storybook.
 */
 
-import { LoadingIntroduction } from './Component'
 import { Provider } from 'react-redux'
+
 import { store } from '@/ducks'
+
+import { LoadingIntroduction } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

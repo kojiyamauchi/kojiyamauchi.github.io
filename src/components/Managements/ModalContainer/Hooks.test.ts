@@ -1,13 +1,11 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Modal Private Hooks Unit Test.
   Basically, Testing Around Hooks Return Values is Done on the Component Side.
 */
 
-import { generateDeviceValue, generatePositionValue, cubesProps, switchGraffiti, switchModal } from './Hooks'
 import '@testing-library/jest-dom/extend-expect'
+
+import { cubesProps, generateDeviceValue, generatePositionValue, switchGraffiti, switchModal } from './Hooks'
 // import { renderHook /* , act*/ } from '@testing-library/react-hooks'
 
 beforeAll(() => {})

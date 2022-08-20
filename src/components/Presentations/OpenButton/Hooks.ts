@@ -2,8 +2,9 @@
   Open Button Private Hooks.
 */
 
-import { useEffect, useRef, RefObject } from 'react'
-import { useSelector, shallowEqual } from 'react-redux'
+import { RefObject, useEffect, useRef } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+
 import { StoreTypes } from '@/types/type'
 
 const letter = 'APPS'

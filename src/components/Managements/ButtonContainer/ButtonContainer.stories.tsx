@@ -3,10 +3,12 @@
 */
 
 import { useEffect } from 'react'
-import { ButtonContainer } from './Component'
 import { Provider } from 'react-redux'
+
 import { store } from '@/ducks'
 import { modalToggle } from '@/ducks/Modal'
+
+import { ButtonContainer } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

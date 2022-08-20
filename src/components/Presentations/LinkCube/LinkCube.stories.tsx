@@ -2,9 +2,10 @@
   Link Cube Component Storybook.
 */
 
-import { LinkCube } from './Component'
-import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
+
+import { LinkCube } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {
@@ -63,7 +64,7 @@ const mockProps = {
   storybookState: true
 }
 
-const StorybookWrapper: React.FC = ({ children }): JSX.Element => (
+const StorybookWrapper: React.FC<{ children: React.ReactNode }> = ({ children }): JSX.Element => (
   <div style={{ width: '100%', height: '100vh', backgroundColor: '#000' }}>
     <Canvas>
       <Suspense fallback={null}>

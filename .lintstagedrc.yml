@@ -1,5 +1,6 @@
-./**/*.{ts,tsx}:
+./**/!($)*.{ts,tsx}:
   - prettier --write
   - eslint --fix --max-warnings 0
 ./**/*.{js,jsx}: prettier --write
 src/**/*.scss: stylelint --fix
+./**/*: cspell --dot --no-must-find-files

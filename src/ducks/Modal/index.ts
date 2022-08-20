@@ -2,6 +2,7 @@
   Modal Store.
 */
 import { createAction, createReducer } from '@reduxjs/toolkit'
+
 import { ModalTypes } from '@/types/type'
 
 const initialState: ModalTypes = {

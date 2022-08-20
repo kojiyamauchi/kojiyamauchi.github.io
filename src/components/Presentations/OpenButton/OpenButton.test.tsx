@@ -1,20 +1,20 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Open Button Component Unit Test.
 */
 
-import { OpenButton } from './Component'
-import { FixedLayout } from '@/components/Layouts/FixedLayout'
-import { Provider } from 'react-redux'
-import { store } from '@/ducks'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { act, render /* ,screen */ } from '@testing-library/react'
+import { Provider } from 'react-redux'
+
+import { FixedLayout } from '@/components/Layouts/FixedLayout'
+import { store } from '@/ducks'
+
+import { OpenButton } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Open Button Component Unit Test', () => {
-  it('Snap Shot Testing', () => {
+  it('Snap Shot Testing', async () => {
     const mockFn = jest.fn()
     render(
       <Provider store={store}>
@@ -26,6 +26,8 @@ describe('Open Button Component Unit Test', () => {
         <OpenButton modalState={false} modalOpen={mockFn} storybook={false} uiTest={true} />
       </Provider>
     )
-    expect(asFragment()).toMatchSnapshot()
+    await act(() => {
+      expect(asFragment()).toMatchSnapshot()
+    })
   })
 })

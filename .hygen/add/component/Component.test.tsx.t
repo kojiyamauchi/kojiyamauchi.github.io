@@ -8,9 +8,7 @@ sh: "prettier --write 'src/components/<%= chooseOutPutDir === 'Layouts' ? `${cho
 <%
   componentName = chooseOutPutDir === 'Layouts' ? `${Name}Layout` : chooseOutPutDir === 'Managements' ? `${Name}Container` : Name
 %>
-/**
- * @jest-environment jsdom
- */
+
 /*
   <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %><%= chooseOutPutDir === 'Layouts' ? ' Layout ' : chooseOutPutDir === 'Managements' ? ' Container ' : ' ' %>Component Unit Test.
 */

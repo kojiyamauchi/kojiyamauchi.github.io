@@ -1,13 +1,12 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Error Page Secondary Heading Component Unit Test.
 */
 
-import { ErrorPageSecondaryHeading } from './Component'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+
+import { ErrorPageSecondaryHeading } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Error Page Secondary Heading Component Unit Test', () => {

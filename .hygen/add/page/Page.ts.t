@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: PagePro
   }
 })
 
-const <%= pascalComponentName %>Page: React.VFC = (): JSX.Element => {
+const <%= pascalComponentName %>Page: React.FC = (): JSX.Element => {
   const router = useRouter()
 
   return (

@@ -2,10 +2,11 @@
   Typography Container Private Hooks.
 */
 
-import { useState, useEffect, useRef, RefObject } from 'react'
-import { useSelector, shallowEqual } from 'react-redux'
-import { StoreTypes } from '@/types/type'
 import { gsap } from 'gsap'
+import { RefObject, useEffect, useRef, useState } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+
+import { StoreTypes } from '@/types/type'
 
 export type hooksReturnType = {
   myComponent: RefObject<HTMLDivElement>

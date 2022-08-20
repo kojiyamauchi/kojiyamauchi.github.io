@@ -2,18 +2,21 @@
   Fixed Layout.
 */
 
-import { Children, isValidElement, cloneElement } from 'react'
-import { ButtonContainer } from '@/components/Managements/ButtonContainer'
-import { ModalContainer } from '@/components/Managements/ModalContainer'
+import { Children, cloneElement, isValidElement } from 'react'
+
 import { AboutMeContainer } from '@/components/Managements/AboutMeContainer'
+import { ButtonContainer } from '@/components/Managements/ButtonContainer'
 import { FooterContainer } from '@/components/Managements/FooterContainer'
+import { ModalContainer } from '@/components/Managements/ModalContainer'
 import { PageProps } from '@/types/type'
+
 import styles from './style.module.scss'
 
 type Props = {
   pages: PageProps['pages']
   currentLocation?: string
   loading?: React.ReactNode
+  children?: React.ReactNode
 }
 
 export const FixedLayout: React.FC<Props> = ({ pages, children, currentLocation, loading }): JSX.Element => {

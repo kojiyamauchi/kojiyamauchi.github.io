@@ -22,15 +22,14 @@ module.exports = {
     answers.chooseOutPutDir = chooseOutPutDir
 
     if (chooseOutPutDir !== 'Layouts') {
-      const chooseComponentTypesQuestion = {
-        type: 'select',
-        name: 'chooseComponentTypes',
-        message: 'Please choose component types.',
-        choices: ['Function Component', 'Void Function Component']
+      const addChildrenQuestion = {
+        type: 'confirm',
+        name: 'addChildren',
+        message: 'Add Children?'
       }
-      const chooseComponentTypesAnswer = await prompter.prompt(chooseComponentTypesQuestion)
-      const { chooseComponentTypes } = chooseComponentTypesAnswer
-      answers.chooseComponentTypes = chooseComponentTypes
+      const addChildrenAnswer = await prompter.prompt(addChildrenQuestion)
+      const { addChildren } = addChildrenAnswer
+      answers.addChildren = addChildren
 
       const addPropsNumberQuestion = {
         type: 'input',

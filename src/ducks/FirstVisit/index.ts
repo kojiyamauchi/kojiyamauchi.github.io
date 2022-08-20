@@ -2,6 +2,7 @@
   First Visit Store.
 */
 import { createAction, createReducer } from '@reduxjs/toolkit'
+
 import { FirstVisitTypes } from '@/types/type'
 
 const initialState: FirstVisitTypes = {

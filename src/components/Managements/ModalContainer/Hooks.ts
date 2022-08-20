@@ -2,10 +2,11 @@
   Modal Private Hooks.
 */
 
-import { useState, useEffect, useRef, Dispatch, SetStateAction, RefObject } from 'react'
+import { Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+
 import { store } from '@/ducks'
 import { aboutMeToggle } from '@/ducks/AboutMe'
-import { useSelector, shallowEqual } from 'react-redux'
 import { StoreTypes } from '@/types/type'
 
 export const cubesProps = [

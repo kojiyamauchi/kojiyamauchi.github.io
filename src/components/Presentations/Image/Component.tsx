@@ -2,8 +2,9 @@
   Image Component.
 */
 
-import { useImage } from './Hooks'
 import { useRouter } from 'next/router'
+
+import { useImage } from './Hooks'
 import styles from './style.module.scss'
 
 export type Props = {
@@ -33,7 +34,7 @@ export type OptionalProps = {
   [P in OptionalKeys]: string
 }
 
-export const Image: React.VFC<Partial<OptionalProps> & Props> = ({ image, extension, alt, ...props }): JSX.Element => {
+export const Image: React.FC<Partial<OptionalProps> & Props> = ({ image, extension, alt, ...props }): JSX.Element => {
   const { firstRender, matches, path, stylesProps } = useImage(extension, props)
   const router = useRouter()
 
